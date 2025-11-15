@@ -170,7 +170,7 @@ a:active {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(56, 63, 81, 0.55), rgba(42, 47, 63, 0.55)), url('../asset/钢琴.jpg');
+    background: linear-gradient(rgba(56, 63, 81, 0.55), rgba(42, 47, 63, 0.55)), url('../asset/studio.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
