@@ -255,6 +255,33 @@ a:active {
     object-fit: cover;
 }
 
+.dataset-card .dataset-icon-link {
+    display: block;
+    text-decoration: none;
+}
+
+.dataset-card .dataset-icon-wrap {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fb 0%, #e9edf5 100%);
+    color: #383F51;
+}
+
+.dataset-card .dataset-icon-wrap i {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    background: #ffffff;
+    color: #383F51;
+    box-shadow: 0 12px 32px rgba(56, 63, 81, 0.14);
+}
+
 .dataset-card .card-title {
     font-weight: 700;
     margin-bottom: 0.5rem;
@@ -412,14 +439,106 @@ a:active {
 
 .markdown-body table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     margin: 1rem 0;
+    table-layout: auto;
 }
 
 .markdown-body th,
 .markdown-body td {
     border: 1px solid #e5e7eb;
-    padding: 0.5rem 0.75rem;
+    padding: 0.7rem 0.9rem;
+    vertical-align: middle;
+}
+
+.markdown-body th {
+    background: #f8fafc;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.markdown-body td {
+    min-width: 5.5rem;
+}
+
+.markdown-body table:has(audio) th,
+.markdown-body table:has(audio) td {
+    text-align: center;
+}
+
+.markdown-body table:has(audio) audio {
+    margin: 0 auto;
+}
+
+.markdown-body td:has(audio) {
+    min-width: 16rem;
+    width: 32%;
+}
+
+.markdown-body td:has(audio) audio {
+    display: block;
+    min-width: 14rem;
+}
+
+.markdown-body td a[href$=".mid"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    padding: 0.25rem 0.35rem;
+    border-radius: 0;
+    background: transparent;
+    color: #383F51;
+    line-height: 1.25;
+    min-width: 7.5rem;
+}
+
+.markdown-body .midi-file-link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    max-width: 8rem;
+    text-align: center;
+}
+
+.markdown-body .midi-file-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.35rem;
+    color: #6b7280;
+}
+
+.markdown-body .midi-file-icon .midi-file-base {
+    font-size: 2.15rem;
+    line-height: 1;
+}
+
+.markdown-body .midi-file-icon .midi-file-note {
+    position: absolute;
+    left: 50%;
+    top: 54%;
+    transform: translate(-50%, -50%);
+    font-size: 0.85rem;
+    color: #383F51;
+}
+
+.markdown-body .midi-file-link > span:last-child {
+    overflow-wrap: anywhere;
+    font-size: 0.86rem;
+}
+
+@media (max-width: 900px) {
+    .markdown-body table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 }
 
 .markdown-body a {
@@ -429,6 +548,36 @@ a:active {
 
 .markdown-body a:hover {
     text-decoration: underline;
+}
+
+.markdown-body blockquote {
+    margin: 1rem 0;
+    padding: 0.85rem 1rem;
+    color: #4b5563;
+    background: #f9fafb;
+    border-left: 4px solid #8B8DA1;
+    border-radius: 8px;
+}
+
+.markdown-body h2 {
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.markdown-body strong {
+    color: #383F51;
+}
+
+.markdown-body img,
+.markdown-body video,
+.markdown-body audio {
+    max-width: 100%;
+}
+
+.markdown-body audio {
+    width: 100%;
+    margin: 0.5rem 0 1rem;
 }
 
 /* 统一按钮（与 .home-hero .btn 对齐的样式） */
@@ -471,4 +620,66 @@ a:active {
 .main-content.loading {
     visibility: hidden;
     opacity: 0;
+}
+
+/* 关于我们页面优化 */
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.research-card {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100px;
+    cursor: default;
+}
+
+.research-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background: #fff;
+    border-color: #383F51;
+}
+
+.research-card h6 {
+    margin: 0;
+    color: #383F51;
+    font-weight: 600;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.member-item {
+    background-color: #f9fafb;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #4b5563;
+    border: 1px solid #e5e7eb;
+    transition: all 0.2s ease;
+}
+
+.member-item:hover {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-color: #d1d5db;
+    transform: translateY(-2px);
 }

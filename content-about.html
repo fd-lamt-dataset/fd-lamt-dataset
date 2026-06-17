@@ -2,10 +2,11 @@
     <div class="container dataset-container ">
         <!-- 顶部：实验室缩写 + 全称 + 简介 -->
         <div class="dataset-header mb-5 animate__animated animate__fadeInDown">
-            <h2 class="mb-2 text-center">FD-LAMT</h2>
+            <h2 class="mb-2 text-center" id="lab-name">FD-LAMT</h2>
             <!-- <div class="lab-acronym">FD‑LAMT</div> -->
-            <div class="lab-fullname">Fudan University - Laboratory of Audio and Music Technology</div>
-            <p class="text-muted intro">
+            <div class="lab-fullname" id="lab-fullname">Fudan University - Laboratory of Audio and Music Technology
+            </div>
+            <p class="text-muted intro" id="lab-description">
                 FD-LAMT 实验室致力于音乐人工智能（Music AI）、计算机听觉（Computer Audition）、语音信息处理（Speech Information
                 Processing）、音频信息安全（Audio Information Security）领域的科技研发。
             </p>
@@ -16,26 +17,28 @@
             <div class="card dataset-card mb-4">
                 <div class="card-body">
                     <h5 class="card-title mb-3">研究方向</h5>
-                    <ul class="mb-0">
-                        <li class="mb-2">音乐信息检索 MIR（Music Information Retrieval）</li>
-                        <li class="mb-2">音乐生成（Music Generation）</li>
-                        <li class="mb-2">一般音频的计算机听觉（General Audio based Computer Audition）</li>
-                        <li class="mb-2">语音信息处理（Speech Information Processing）</li>
-                        <li class="mb-2">音频信息安全（Audio Information Security）</li>
-                        <li class="mb-2">...</li>
-                    </ul>
+                    <div id="research-interests-container">
+                        <!-- Dynamic Content -->
+                    </div>
                 </div>
             </div>
 
             <!-- 合作导师 -->
             <div class="card dataset-card mb-4">
                 <div class="card-body">
+                    <h5 class="card-title mb-3">合作导师</h5>
+                    <ul class="mb-0" id="cooperative-mentors-list">
+                        <!-- Dynamic Content -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 科研文章 -->
+            <div class="card dataset-card mb-4">
+                <div class="card-body">
                     <h5 class="card-title mb-3">科研文章</h5>
-                    <ul class="mb-0">
-                        <li class="mb-2">Xiaoliang He, Kangjie Dong, Jingkai Cao, Shuai Yu, Wei Li, Yi Yu, “A
-                            Mamba-based Network for Semi-supervised Singing Melody Extraction Using Confidence Binary
-                            Regularization”, IEEE International Conference on Acoustics, Speech, and Signal Processing
-                            (ICASSP), 2025. (音频领域顶级国际会议, EI)</li>
+                    <ul class="mb-0" id="research-articles-list">
+                        <!-- Dynamic Content -->
                     </ul>
                 </div>
             </div>
@@ -44,10 +47,8 @@
             <div class="card dataset-card">
                 <div class="card-body">
                     <h5 class="card-title mb-3">已毕业成员</h5>
-                    <ul class="mb-0">
-                        <li class="mb-2">姓名1（去向/职位）— 研究方向或代表成果</li>
-                        <li class="mb-2">姓名2（去向/职位）— 研究方向或代表成果</li>
-                        <li class="mb-2">姓名3（去向/职位）— 研究方向或代表成果</li>
+                    <ul class="mb-0" id="graduated-members-list">
+                        <!-- Dynamic Content -->
                     </ul>
                 </div>
             </div>

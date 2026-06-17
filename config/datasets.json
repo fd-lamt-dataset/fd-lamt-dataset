@@ -4,28 +4,29 @@
             "id": "ac-ccm",
             "name": "AC-CCM",
             "description": "AC-CCM 是首个专注于中国民乐意境识别的数据集，基于清代琴学经典《溪山琴况》的二十四况理论框架，涵盖多种乐器、时代与风格。",
-            "image": "./asset/古琴.jpg",
-            "imageAlt": "数据集示意图",
+            "imageAlt": "数据集图标",
             "mdFile": "ac-ccm",
-            "featured": true
+            "featured": true,
+            "hidden": true,
+            "icon": "fa-solid fa-icons"
         },
         {
-            "id": "demo-dataset-2",
-            "name": "音乐数据集2",
-            "description": "专门用于语音识别和自然语言处理研究的数据集。",
-            "image": "./asset/古琴.jpg",
-            "imageAlt": "数据集示意图",
+            "id": "gzvarmsa",
+            "name": "GZVarMSA",
+            "description": "GZVarMSA 是用于音乐结构分析的中国古筝变奏曲数据集，包含 80 首传统筝曲、18,081 秒音频，覆盖潮州、山东、陕西、浙江四大筝乐流派，并提供结构复杂度人工标注。",
+            "imageAlt": "数据集图标",
             "mdFile": "demo2",
-            "featured": false
+            "featured": false,
+            "icon": "fa-solid fa-music"
         },
         {
-            "id": "demo-dataset-3",
-            "name": "音乐数据集3",
-            "description": "专门用于语音识别和自然语言处理研究的数据集。",
-            "image": "./asset/古琴.jpg",
-            "imageAlt": "数据集示意图",
+            "id": "xfid",
+            "name": "XFID",
+            "description": "XFID 是用于自动音乐转录的新疆民族乐器数据集，覆盖都塔尔、萨塔尔、弹拨尔三种代表性乐器，包含约 4 小时无损录音、对齐 MIDI 标注和可读乐谱。",
+            "imageAlt": "数据集图标",
             "mdFile": "demo3",
-            "featured": false
+            "featured": false,
+            "icon": "fa-solid fa-music"
         }
     ]
 }
