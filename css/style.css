@@ -170,10 +170,46 @@ a:active {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     background: linear-gradient(rgba(56, 63, 81, 0.55), rgba(42, 47, 63, 0.55)), url('../asset/studio.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.hero-mirror-link {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.65rem 1.15rem;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: 999px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    background: rgba(32, 36, 47, 0.55);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-mirror-link:hover,
+.hero-mirror-link:focus {
+    color: #ffffff;
+    background: rgba(56, 63, 81, 0.82);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.36);
+    transform: translateY(-2px);
+}
+
+.hero-mirror-link:active {
+    transform: translateY(-1px);
 }
 
 .home-hero h1 {
