@@ -616,6 +616,73 @@ a:active {
     margin: 0.5rem 0 1rem;
 }
 
+
+/* GZVarMSA sample audio table */
+.markdown-body .gzvarmsa-sample-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.markdown-body .gzvarmsa-sample-table th:nth-child(1),
+.markdown-body .gzvarmsa-sample-table td.track-cell {
+    width: 18%;
+}
+
+.markdown-body .gzvarmsa-sample-table th:nth-child(2),
+.markdown-body .gzvarmsa-sample-table td.mode-cell {
+    width: 10%;
+}
+
+.markdown-body .gzvarmsa-sample-table th:nth-child(3),
+.markdown-body .gzvarmsa-sample-table td.performer-cell {
+    width: 14%;
+}
+
+.markdown-body .gzvarmsa-sample-table th:nth-child(4) {
+    width: 44%;
+}
+
+.markdown-body .gzvarmsa-sample-table th:nth-child(5),
+.markdown-body .gzvarmsa-sample-table td.label-cell {
+    width: 14%;
+    text-align: center;
+}
+
+.markdown-body .gzvarmsa-sample-table .track-cell,
+.markdown-body .gzvarmsa-sample-table .mode-cell,
+.markdown-body .gzvarmsa-sample-table .performer-cell {
+    vertical-align: middle;
+    text-align: center;
+    white-space: normal;
+    word-break: keep-all;
+    line-height: 1.55;
+}
+
+.markdown-body .gzvarmsa-sample-table .sample-track-title {
+    font-weight: 700;
+    color: #383F51;
+    font-size: 1rem;
+}
+
+.markdown-body .gzvarmsa-sample-table .mode-cell,
+.markdown-body .gzvarmsa-sample-table .performer-cell {
+    color: #4b5563;
+    font-size: 0.92rem;
+}
+
+.markdown-body .gzvarmsa-sample-table audio {
+    width: 100%;
+    min-width: 240px;
+    margin: 0.2rem 0;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .markdown-body .gzvarmsa-sample-table {
+        min-width: 820px;
+    }
+}
+
 /* 统一按钮（与 .home-hero .btn 对齐的样式） */
 .btn-hero {
     border-radius: 50px;

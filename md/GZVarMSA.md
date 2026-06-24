@@ -1,0 +1,150 @@
+# GZVarMSA
+
+GZVarMSA（Guzheng Variation Music Structure Analysis Dataset）是一个面向中国古筝变奏曲音乐结构分析与结构复杂度研究的数据集。数据集收录 80 首来自潮州、山东、陕西、浙江四大传统筝乐流派的多版本代表性传统筝曲，总时长 18,081 秒，由专业古筝演奏者和音乐学研究者围绕结构信息与复杂度变化进行人工标注，可用于变奏结构分析、音乐复杂度量化、中国传统器乐 MIR 以及古筝音乐生成、情感分析等下游任务。
+
+## 数据集信息
+
+| 项目 | 内容 |
+| --- | --- |
+| 数据集名称 | GZVarMSA |
+| 英文全称 | Guzheng Variation Music Structure Analysis Dataset |
+| 关联论文 | GZVarMSA：一个用于音乐结构分析的中国古筝变奏曲数据集及结构复杂度算法 |
+| 论文作者 | 孟文武、汪志阳、赵晶、李睿思、夏凡、李伟 |
+| 数据对象 | 中国古筝变奏曲 / 中国传统筝曲 |
+| 曲目数量 | 80 首 |
+| 总时长 | 18,081 秒 |
+| 覆盖流派 | 潮州、山东、陕西、浙江四大传统筝乐流派 |
+| 代表性演奏家作品 | 27 首 |
+| 音频格式 | WAV，PCM 16-bit，双声道，采样率 48,000 Hz |
+| 标注人员 | 专业古筝演奏者、音乐学研究者 |
+| 标注内容 | 主题乐段、变奏乐段、时间节点、结构关系、复杂度变化标签 |
+| 复杂度维度 | 板数（小节数）、板式（拍号）、演奏速度、演奏技法 / 旋律节奏 |
+| 复杂度标签 | 变简单（+1）、无变化（0）、变复杂（-1） |
+| 主要用途 | 音乐结构分析、变奏结构研究、结构复杂度量化、中国传统器乐 MIR |
+
+GZVarMSA 包含 80 首传统筝曲，总时长 18,081 秒，其中包括 27 首代表性演奏家作品，覆盖潮州、山东、陕西、浙江四大传统筝乐流派。数据集以音频而非符号文件为主要数据形式，能够保留古筝演奏中的音色、演奏个性和拨弦类乐器技法等细节，适合面向音乐艺术性、连贯性、演奏技法与结构复杂度的研究。
+
+标注流程由专业人员对照乐谱并同步播放音频完成。标注者首先判断乐曲是否属于变奏曲；若属于变奏曲，则标记主题乐段及其时间节点，再依次标注后续变奏段落，并从板数、板式、速度、旋律与节奏等维度判断复杂度变化。数据集中可呈现《寒鸦戏水》等曲目的主题乐段与多个变奏乐段时间标注。
+
+## 数据集样例
+
+下表展示 GZVarMSA 中部分古筝变奏曲的结构标注样例。**音频片段**为按标注时间节点截取的对应乐段，可直接在线播放；**标签** 表示主题乐段及其后续变奏乐段标签。
+
+<table class="gzvarmsa-sample-table">
+  <thead>
+    <tr>
+      <th>曲目</th>
+      <th>调式</th>
+      <th>演奏者</th>
+      <th>音频片段</th>
+      <th>标签</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="4" class="track-cell"><div class="sample-track-title">寒鸦戏水</div></td>
+      <td rowspan="4" class="mode-cell">重六</td>
+      <td rowspan="4" class="performer-cell">林毛根</td>
+      <td><audio controls preload="none" src="asset/samples/gzvarmsa/hyxs_01_A.wav"></audio></td>
+      <td class="label-cell">主题乐段A</td>
+    </tr>
+    <tr>
+      <td><audio controls preload="none" src="asset/samples/gzvarmsa/hyxs_02_A1.wav"></audio></td>
+      <td class="label-cell">变奏乐段A1</td>
+    </tr>
+    <tr>
+      <td><audio controls preload="none" src="asset/samples/gzvarmsa/hyxs_03_A2.wav"></audio></td>
+      <td class="label-cell">变奏乐段A2</td>
+    </tr>
+    <tr>
+      <td><audio controls preload="none" src="asset/samples/gzvarmsa/hyxs_04_A3.wav"></audio></td>
+      <td class="label-cell">变奏乐段A3</td>
+    </tr>
+    <tr>
+      <td rowspan="3" class="track-cell"><div class="sample-track-title">西江月</div></td>
+      <td rowspan="3" class="mode-cell">轻六</td>
+      <td rowspan="3" class="performer-cell">孙萍</td>
+      <td><audio controls preload="none" src="asset/samples/gzvarmsa/xjy_01_A.wav"></audio></td>
+      <td class="label-cell">主题乐段A</td>
+    </tr>
+    <tr>
+      <td><audio controls preload="none" src="asset/samples/gzvarmsa/xjy_02_A1.wav"></audio></td>
+      <td class="label-cell">变奏乐段A1</td>
+    </tr>
+    <tr>
+      <td><audio controls preload="none" src="asset/samples/gzvarmsa/xjy_03_A2.wav"></audio></td>
+      <td class="label-cell">变奏乐段A2</td>
+    </tr>
+    <tr>
+      <td rowspan="2" class="track-cell"><div class="sample-track-title">开扇窗</div></td>
+      <td rowspan="2" class="mode-cell">轻六</td>
+      <td rowspan="2" class="performer-cell">张雅然</td>
+      <td><audio controls preload="none" src="asset/samples/gzvarmsa/ksc_01_A.wav"></audio></td>
+      <td class="label-cell">主题乐段A</td>
+    </tr>
+    <tr>
+      <td><audio controls preload="none" src="asset/samples/gzvarmsa/ksc_02_A1.wav"></audio></td>
+      <td class="label-cell">变奏乐段A1</td>
+    </tr>
+    <tr>
+      <td rowspan="6" class="track-cell"><div class="sample-track-title">柳青娘</div></td>
+      <td rowspan="6" class="mode-cell">活五</td>
+      <td rowspan="6" class="performer-cell">袁莎</td>
+      <td><audio controls preload="none" src="asset/samples/gzvarmsa/lqn_01_A.wav"></audio></td>
+      <td class="label-cell">主题乐段A</td>
+    </tr>
+    <tr>
+      <td><audio controls preload="none" src="asset/samples/gzvarmsa/lqn_02_A1.wav"></audio></td>
+      <td class="label-cell">变奏乐段A1</td>
+    </tr>
+    <tr>
+      <td><audio controls preload="none" src="asset/samples/gzvarmsa/lqn_03_A2.wav"></audio></td>
+      <td class="label-cell">变奏乐段A2</td>
+    </tr>
+    <tr>
+      <td><audio controls preload="none" src="asset/samples/gzvarmsa/lqn_04_A3.wav"></audio></td>
+      <td class="label-cell">变奏乐段A3</td>
+    </tr>
+    <tr>
+      <td><audio controls preload="none" src="asset/samples/gzvarmsa/lqn_05_A4.wav"></audio></td>
+      <td class="label-cell">变奏乐段A4</td>
+    </tr>
+    <tr>
+      <td><audio controls preload="none" src="asset/samples/gzvarmsa/lqn_06_A5.wav"></audio></td>
+      <td class="label-cell">变奏乐段A5</td>
+    </tr>
+  </tbody>
+</table>
+
+## 获取方法
+
+如需获取 GZVarMSA 数据集，请通过邮件联系维护团队申请，并在邮件中说明研究用途、所属单位和计划使用方式。
+
+- 申请邮箱：[xiafan@zjcm.edu.cn](mailto:xiafan@zjcm.edu.cn)
+- 邮件标题建议：`数据集申请 - GZVarMSA - 申请人姓名/单位`
+- 邮件内容建议包含：申请人姓名、单位与联系方式、研究目的或项目简介、拟使用的数据范围、是否需要样例数据、是否需要引用或再分发说明。
+
+维护团队将在收到申请后，根据数据集许可、使用范围和共享条件进行回复。
+
+## 使用许可说明
+
+GZVarMSA 数据集仅限用于学术研究、模型评测、教学与非商业用途。使用者应遵守数据提供方和维护团队的许可要求，在论文、报告、演示或项目说明中注明数据来源，并不得对音频、标注文件或相关资料进行未经授权的再分发、上传至第三方平台或商业化使用。
+
+<!--
+## 参考文献引用格式及链接
+
+如在研究中使用 GZVarMSA 数据集，请引用关联论文。正式出版信息确认后，将补充卷期、页码、DOI 和论文链接。
+
+- 论文文件：`paper/GZVarMSA：一个用于音乐结构分析的中国古筝变奏曲数据集及结构复杂度算法.docx`
+- 数据集网站：https://fd-lamt-dataset.github.io/fd-lamt-dataset
+- 论文链接：待补充
+
+```bibtex
+@article{gzvarmsa,
+  title   = {GZVarMSA：一个用于音乐结构分析的中国古筝变奏曲数据集及结构复杂度算法},
+  author  = {孟文武 and 汪志阳 and 赵晶 and 李睿思 and 夏凡 and 李伟},
+  journal = {待补充},
+  year    = {待补充}
+}
+```
+-->

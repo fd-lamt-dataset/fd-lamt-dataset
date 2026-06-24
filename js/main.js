@@ -109,7 +109,7 @@ function getHashAndQuery() {
 
 // function renderDatasetDetail() {
 //     const { params } = getHashAndQuery();
-//     const mdName = params.get('md') || 'demo2';
+//     const mdName = params.get('md') || 'GZVarMSA';
 //     const mdPath = `md/${mdName}.md`;
 //     const root = document.getElementById('md-root');
 //     const titleEl = document.getElementById('md-title');
@@ -145,7 +145,7 @@ function getHashAndQuery() {
 
 function renderDatasetDetail() {
     const { params } = getHashAndQuery();
-    const mdName = params.get('md') || 'demo2';
+    const mdName = params.get('md') || 'GZVarMSA';
     const mdPath = `md/${mdName}.md`;
     const root = document.getElementById('md-root');
     const titleEl = document.getElementById('md-title');
