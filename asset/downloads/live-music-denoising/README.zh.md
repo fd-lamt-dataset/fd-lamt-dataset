@@ -1,7 +1,5 @@
 # 现场音乐降噪数据集元数据
 
-[下载元数据（ZIP）](metadata.zip) · [下载英文说明（README.md）](README.md) · [下载中文说明（README.zh.md）](README.zh.md)
-
 本仓库提供以下论文所述数据集的元数据：
 
 > Live Music Denoising with Authentic Live Data and Track-Editing-Guided Semi-Supervised Learning.
@@ -29,6 +27,8 @@
 - `metadata/benchmark_noise_generation_metadata_Normal.csv`：Normal 基准噪声条件的生成元数据。
 - `metadata/benchmark_noise_generation_metadata_Strong.csv`：Strong 基准噪声条件的生成元数据。
 - `metadata/benchmark_noise_generation_metadata_Extreme.csv`：Extreme 基准噪声条件的生成元数据。
+
+[下载元数据（ZIP）](metadata.zip)
 
 ## 元数据结构
 

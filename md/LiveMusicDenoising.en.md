@@ -1,7 +1,5 @@
 # Live Music Denoising Dataset Metadata
 
-[Download metadata (ZIP)](asset/downloads/live-music-denoising/metadata.zip) · [Download English documentation (README.md)](asset/downloads/live-music-denoising/README.md) · [Download Chinese documentation (README.zh.md)](asset/downloads/live-music-denoising/README.zh.md)
-
 This repository provides the metadata for the dataset described in:
 
 > Live Music Denoising with Authentic Live Data and Track-Editing-Guided Semi-Supervised Learning.
@@ -30,6 +28,7 @@ For the benchmark partition, this release provides benchmark noise generation me
 - `metadata/benchmark_noise_generation_metadata_Strong.csv`: generation metadata for the Strong benchmark noise condition.
 - `metadata/benchmark_noise_generation_metadata_Extreme.csv`: generation metadata for the Extreme benchmark noise condition.
 
+[Download metadata (ZIP)](asset/downloads/live-music-denoising/metadata.zip)
 
 ## Metadata Schema
 
@@ -45,7 +44,6 @@ Each row describes one source recording.
 | `source_type` | `bilibili`, `archive.org`, or another source label. |
 | `source_reference` | Original source identifier or URL. |
 | `source_url` | Public URL for the source recording. |
-
 
 ### `metadata/clean_excerpts.csv`
 
@@ -63,7 +61,6 @@ Each row describes one clean music excerpt.
 | `start_time_sec` | Excerpt start timestamp in seconds. |
 | `end_time_sec` | Excerpt end timestamp in seconds. |
 | `duration_sec` | Excerpt duration in seconds. |
-
 
 ### `metadata/benchmark_noise_generation_metadata_<LEVEL>.csv`
 
@@ -85,7 +82,6 @@ Each row describes a noise event used to reconstruct a benchmark noise track for
 | `noise_source_end_sec` | End time of the sampled noise interval in the source noise recording. |
 | `fragment_rms` | RMS value of the selected intermediate noise fragment. |
 | `gain` | Gain applied to the sampled noise event. |
-
 
 
 ## Citation
