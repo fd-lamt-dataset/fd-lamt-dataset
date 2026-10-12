@@ -1,406 +1,152 @@
-// function loadContent(url, link) {
-//     fetch(url)
-//         .then(response => response.text())
-//         .then(html => {
-//             document.getElementById('main-content').innerHTML = html;
-
-//             // 高亮当前选中导航
-//             document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
-//             if (link) link.classList.add('active');
-//         })
-//         .catch(err => {
-//             document.getElementById('main-content').innerHTML = "<p>加载失败</p>";
-//             console.error(err);
-//         });
-// }
-
-// // 基于 hash 渲染
-// const routes = {
-//     '#home': { url: 'content-home.html', index: 0 },
-//     '#dataset': { url: 'content-dataset.html', index: 1 },
-//     '#about': { url: 'content-about.html', index: 2 },
-//     '#contact': { url: 'content-connect_us.html', index: 3 }
-// };
-
-// function renderFromHash() {
-//     const hash = window.location.hash || '#home';
-//     const route = routes[hash] ? hash : '#home';
-//     const link = document.querySelectorAll('.nav-link')[routes[route].index];
-//     loadContent(routes[route].url, link);
-// }
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     renderFromHash();
-//     window.addEventListener('hashchange', renderFromHash);
-// });
-
-// function loadContent(url, link) {
-//     return fetch(url)
-//         .then(response => response.text())
-//         .then(html => {
-//             document.getElementById('main-content').innerHTML = html;
-
-//             // 高亮当前选中导航
-//             document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
-//             if (link) link.classList.add('active');
-//         })
-//         .catch(err => {
-//             document.getElementById('main-content').innerHTML = "<p>加载失败</p>";
-//             console.error(err);
-//         });
-// }
-
-function loadContent(url, link) {
-    const fetchUrl = url.includes('?') ? `${url}&v=${Date.now()}` : `${url}?v=${Date.now()}`;
-    return fetch(fetchUrl, { cache: 'no-store' })
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('main-content').innerHTML = html;
-
-            // 高亮当前选中导航
-            document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
-            if (link) link.classList.add('active');
-
-            // 若直接加载了数据集页，确保渲染卡片
-            if (typeof renderDatasetList === 'function' && url.indexOf('content-dataset.html') !== -1) {
-                renderDatasetList();
-            }
-
-            // 若加载了关于页，渲染动态内容
-            if (url.indexOf('content-about.html') !== -1) {
-                renderAboutPage();
-            }
-        })
-        .catch(err => {
-            document.getElementById('main-content').innerHTML = "<p>加载失败</p>";
-            console.error(err);
-        });
-}
-
-// 基于 hash 渲染
 const routes = {
-    '#home': { url: 'content-home.html', index: 0 },
-    '#dataset': { url: 'content-dataset.html', index: 1 },
-    '#dataset-detail': { url: 'content-dataset-detail.html', index: 1 },
-    '#about': { url: 'content-about.html', index: 2 },
-    '#contact': { url: 'content-connect-us.html', index: 3 }
+    '#home': { url: 'content-home', index: 0 },
+    '#dataset': { url: 'content-dataset', index: 1 },
+    '#dataset-detail': { url: 'content-dataset-detail', index: 1 },
+    '#about': { url: 'content-about', index: 2 },
+    '#contact': { url: 'content-connect-us', index: 3 }
 };
-
-function ensureMarkedLoaded() {
-    return new Promise((resolve, reject) => {
-        if (window.marked) {
-            resolve();
-            return;
-        }
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
-        script.onload = () => resolve();
-        script.onerror = (e) => reject(e);
-        document.head.appendChild(script);
-    });
-}
-
+const messages = {
+    zh: { nav: ['首页', '数据集', '关于 FD-LAMT', '联系我们'], details: '查看详情', empty: '暂无数据集。', error: '内容加载失败，请刷新后重试。', more: '加载更多', unnamed: '未命名数据集', icon: '数据集图标' },
+    en: { nav: ['Home', 'Datasets', 'About FD-LAMT', 'Contact us'], details: 'View details', empty: 'No datasets available.', error: 'Content could not be loaded. Please refresh and try again.', more: 'Load more', unnamed: 'Unnamed dataset', icon: 'Dataset icon' }
+};
+let language = 'zh';
+let renderVersion = 0;
+let markedPromise;
 function getHashAndQuery() {
-    const hashFull = window.location.hash || '#home';
-    const [hash, query = ''] = hashFull.split('?');
-    const params = new URLSearchParams(query);
-    return { hash, params };
+    const [hash, query = ''] = (window.location.hash || '#home').split('?');
+    return { hash, params: new URLSearchParams(query) };
 }
-
-// function renderDatasetDetail() {
-//     const { params } = getHashAndQuery();
-//     const mdName = params.get('md') || 'GZVarMSA';
-//     const mdPath = `md/${mdName}.md`;
-//     const root = document.getElementById('md-root');
-//     const titleEl = document.getElementById('md-title');
-//     if (!root) return;
-
-//     const rootRef = root; // 防止过程中节点被替换
-
-//     Promise.all([
-//         ensureMarkedLoaded(),
-//         fetch(mdPath).then(res => {
-//             if (!res.ok) throw new Error('Markdown 加载失败');
-//             return res.text();
-//         })
-//     ])
-//         .then(([_, text]) => {
-//             const firstLine = text.split('\n').find(l => l.trim().startsWith('# '));
-//             const html = (window.marked && typeof window.marked.parse === 'function')
-//                 ? window.marked.parse(text, { gfm: true, breaks: true })
-//                 : text.replace(/[&<>]/g, s => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[s]));
-
-//             if (!document.body.contains(rootRef)) return; // 页面已切换则不写入
-//             if (titleEl && firstLine) titleEl.textContent = firstLine.replace(/^#\s*/, '').trim();
-//             rootRef.innerHTML = html;
-//         })
-//         .catch(err => {
-//             if (document.body.contains(rootRef)) {
-//                 rootRef.innerHTML = '<p class="text-muted">内容加载失败或文档不存在。</p>';
-//                 if (titleEl) titleEl.textContent = '';
-//             }
-//             console.error(err);
-//         });
-// }
-
-function renderDatasetDetail() {
-    const { params } = getHashAndQuery();
-    const mdName = params.get('md') || 'GZVarMSA';
-    const mdPath = `md/${mdName}.md`;
-    const root = document.getElementById('md-root');
-    const titleEl = document.getElementById('md-title');
-    const mainContent = document.querySelector('.main-content');
-
-    if (!root || !mainContent) return;
-
-    // 整体隐藏
-    mainContent.classList.add('loading');
-
-    Promise.all([
-        ensureMarkedLoaded(),
-        fetch(`${mdPath}?v=${Date.now()}`, { cache: 'no-store' }).then(res => {
-            if (!res.ok) throw new Error('Markdown 加载失败');
-            return res.text();
-        })
-    ])
-        .then(([_, text]) => {
-            const firstLine = text.split('\n').find(l => l.trim().startsWith('# '));
-            const html = (window.marked && typeof window.marked.parse === 'function')
-                ? window.marked.parse(text, { gfm: true, breaks: true })
-                : text.replace(/[&<>]/g, s => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[s]));
-
-            if (!document.body.contains(root)) return;
-
-            if (titleEl && firstLine) {
-                titleEl.textContent = firstLine.replace(/^#\s*/, '').trim();
-            }
-            root.innerHTML = html;
-
-            // 显示整个 main-content
-            mainContent.classList.remove('loading');
-        })
-        .catch(err => {
-            if (document.body.contains(root)) {
-                root.innerHTML = '<p class="text-muted">内容加载失败或文档不存在。</p>';
-                if (titleEl) titleEl.textContent = '';
-            }
-            console.error(err);
-
-            // 即使失败也要显示
-            mainContent.classList.remove('loading');
+function getLanguage() {
+    const requested = getHashAndQuery().params.get('lang');
+    if (requested === 'en' || requested === 'zh') return requested;
+    try { return localStorage.getItem('fdlamt-language') === 'en' ? 'en' : 'zh'; }
+    catch (_) { return language; }
+}
+function updateLanguageControls() {
+    document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
+    document.querySelectorAll('.nav-link').forEach((a, i) => { a.textContent = messages[language].nav[i]; });
+    document.querySelector('.sidebar-logo img').alt = language === 'en' ? 'Laboratory logo' : '实验室 Logo';
+    const button = document.getElementById('language-toggle');
+    button.textContent = language === 'en' ? '中文' : 'English';
+    button.setAttribute('aria-label', language === 'en' ? '切换到中文' : 'Switch to English');
+}
+async function fetchText(path) {
+    const response = await fetch(`${path}?v=20261012bilingual`, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`HTTP ${response.status}: ${path}`);
+    return response.text();
+}
+function ensureMarkedLoaded() {
+    if (window.marked) return Promise.resolve();
+    if (!markedPromise) {
+        markedPromise = new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'vendor/marked.min.js';
+            script.onload = resolve;
+            script.onerror = () => { script.remove(); markedPromise = undefined; reject(new Error('Markdown renderer unavailable')); };
+            document.head.appendChild(script);
         });
+    }
+    return markedPromise;
 }
-
-
-
-
-// function renderFromHash() {
-//     const { hash } = getHashAndQuery();
-//     const routeKey = routes[hash] ? hash : (routes[hash.split('?')[0]] ? hash.split('?')[0] : '#home');
-//     const link = document.querySelectorAll('.nav-link')[routes[routeKey].index];
-//     loadContent(routes[routeKey].url, link).then(() => {
-//         if (routeKey === '#dataset-detail') {
-//             renderDatasetDetail();
-//         }
-//     });
-// }
-
-function renderFromHash() {
-    const { hash } = getHashAndQuery();
-    const routeKey = routes[hash] ? hash : (routes[hash.split('?')[0]] ? hash.split('?')[0] : '#home');
-    const link = document.querySelectorAll('.nav-link')[routes[routeKey].index];
-    loadContent(routes[routeKey].url, link).then(() => {
-        if (routeKey === '#dataset-detail') {
-            renderDatasetDetail();
-        }
-        if (routeKey === '#dataset') {
-            renderDatasetList();
-        }
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+async function renderDatasetList(version, lang) {
+    const data = JSON.parse(await fetchText('config/datasets.json'));
+    if (version !== renderVersion) return;
+    const grid = document.querySelector('.dataset-grid');
+    const list = (data.datasets || []).filter(ds => !ds.hidden);
+    grid.innerHTML = list.length ? list.map(ds => {
+        const href = `#dataset-detail?md=${encodeURIComponent(ds.mdFile || ds.id)}&lang=${lang}`;
+        const title = escapeHTML(ds.name || messages[lang].unnamed);
+        const description = escapeHTML(lang === 'en' ? ds.descriptionEn : ds.description);
+        const alt = escapeHTML((lang === 'en' ? ds.imageAltEn : ds.imageAlt) || messages[lang].icon);
+        return `<div class="col"><div class="card dataset-card h-100">
+            <a href="${href}" class="dataset-icon-link" aria-label="${alt}"><div class="dataset-icon-wrap" role="img" aria-label="${alt}"><i class="${escapeHTML(ds.icon || 'fa-solid fa-database')}" aria-hidden="true"></i></div></a>
+            <div class="card-body"><h5 class="card-title"><a href="${href}" class="card-title-link">${title}</a></h5><p class="card-text">${description}</p></div>
+            <div class="card-footer bg-transparent border-0"><a href="${href}" class="btn btn-primary">${messages[lang].details}</a></div>
+        </div></div>`;
+    }).join('') : `<p>${messages[lang].empty}</p>`;
+}
+async function renderDatasetDetail(version, lang, params) {
+    const md = params.get('md') || 'GZVarMSA';
+    if (!['GZVarMSA', 'XFID', 'ac-ccm', 'LiveMusicDenoising'].includes(md)) throw new Error('Unknown dataset');
+    const [, text] = await Promise.all([ensureMarkedLoaded(), fetchText(`md/${md}${lang === 'en' ? '.en' : ''}.md`)]);
+    if (version !== renderVersion) return;
+    const firstLine = text.split('\n').find(line => line.startsWith('# '));
+    document.getElementById('md-title').textContent = firstLine ? firstLine.slice(2).trim() : md;
+    document.getElementById('md-root').innerHTML = window.marked.parse(text, { gfm: true, breaks: true });
+}
+async function renderAboutPage(version, lang) {
+    const data = JSON.parse(await fetchText(`config/about${lang === 'en' ? '.en' : ''}.json`));
+    if (version !== renderVersion) return;
+    document.getElementById('lab-name').textContent = data.labInfo.name;
+    document.getElementById('lab-fullname').textContent = data.labInfo.fullName;
+    document.getElementById('lab-description').textContent = data.labInfo.description;
+    const research = document.getElementById('research-interests-container');
+    research.className = 'research-grid';
+    research.innerHTML = data.researchInterests.map(group => `<div class="research-card"><h6>${escapeHTML(group.category)}</h6></div>`).join('');
+    const articles = document.getElementById('research-articles-list');
+    let displayed = 0;
+    const appendArticles = count => {
+        data.researchArticles.slice(displayed, displayed + count).forEach(article => {
+            const li = document.createElement('li'); li.className = 'mb-2'; li.textContent = article; articles.appendChild(li);
+        });
+        displayed = Math.min(displayed + count, data.researchArticles.length);
+    };
+    appendArticles(5);
+    if (displayed < data.researchArticles.length) {
+        const container = document.createElement('div'); container.className = 'text-center mt-3';
+        const button = document.createElement('button'); button.className = 'btn btn-outline-primary btn-sm'; button.textContent = messages[lang].more;
+        button.onclick = () => { appendArticles(10); if (displayed === data.researchArticles.length) container.remove(); };
+        container.appendChild(button); articles.parentNode.appendChild(container);
+    }
+    document.getElementById('cooperative-mentors-list').innerHTML = data.cooperativeMentors.map(m => `<li class="mb-2">${escapeHTML(m)}</li>`).join('');
+    const members = document.getElementById('graduated-members-list'); members.classList.add('members-grid');
+    members.innerHTML = data.graduatedMembers.map(m => `<li class="member-item">${escapeHTML(m)}</li>`).join('');
+}
+async function renderFromHash() {
+    const version = ++renderVersion;
+    language = getLanguage();
+    const lang = language;
+    try { localStorage.setItem('fdlamt-language', lang); } catch (_) {}
+    updateLanguageControls();
+    const { hash, params } = getHashAndQuery();
+    const route = routes[hash] || routes['#home'];
+    document.querySelectorAll('.nav-link').forEach((a, i) => a.classList.toggle('active', i === route.index));
+    const main = document.getElementById('main-content');
+    main.setAttribute('aria-busy', 'true');
+    try {
+        const html = await fetchText(`${route.url}${lang === 'en' ? '.en' : ''}.html`);
+        if (version !== renderVersion) return;
+        main.innerHTML = html;
+        if (hash === '#dataset') await renderDatasetList(version, lang);
+        if (hash === '#dataset-detail') await renderDatasetDetail(version, lang, params);
+        if (hash === '#about') await renderAboutPage(version, lang);
+    } catch (error) {
+        if (version === renderVersion) main.innerHTML = `<p class="p-3" role="alert">${messages[lang].error}</p>`;
+        console.error(error);
+    } finally {
+        if (version === renderVersion) main.removeAttribute('aria-busy');
+    }
+}
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('language-toggle').addEventListener('click', () => {
+        const { hash, params } = getHashAndQuery();
+        params.set('lang', language === 'en' ? 'zh' : 'en');
+        window.location.hash = `${hash}?${params}`;
     });
-}
-
-// 页面加载时按 hash 渲染当前页，且支持前进/后退
-document.addEventListener("DOMContentLoaded", function () {
     renderFromHash();
     window.addEventListener('hashchange', renderFromHash);
 });
-
-function renderDatasetList() {
-    const grid = document.querySelector('.dataset-grid');
-    if (!grid) return;
-
-    // grid.innerHTML = '<div class="text-muted px-2">正在加载数据集...</div>';
-
-    fetch('config/datasets.json?v=20260615a', { cache: 'no-store' })
-        .then(res => {
-            if (!res.ok) throw new Error('数据集配置加载失败');
-            return res.json();
-        })
-        .then(data => {
-            const list = Array.isArray(data.datasets) ? data.datasets.filter(ds => !ds.hidden) : [];
-            if (!list.length) {
-                grid.innerHTML = '<div class="text-muted px-2">暂无数据集。</div>';
-                return;
-            }
-
-            grid.innerHTML = list.map(ds => {
-                const href = `#dataset-detail?md=${encodeURIComponent(ds.mdFile || ds.id || '')}`;
-                const icon = ds.icon || 'fa-solid fa-database';
-                const alt = ds.imageAlt || ds.name || '数据集图标';
-                const title = ds.name || ds.id || '未命名数据集';
-                const desc = ds.description || '';
-
-                return `
-            <div class="col">
-                <div class="card dataset-card h-100">
-                    <a href="${href}" class="dataset-icon-link" aria-label="${alt}">
-                        <div class="dataset-icon-wrap" role="img" aria-label="${alt}">
-                            <i class="${icon}" aria-hidden="true"></i>
-                        </div>
-                    </a>
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <a href="${href}" class="card-title-link">${title}</a>
-                        </h5>
-                        <p class="card-text">${desc}</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0">
-                        <a href="${href}" class="btn btn-primary">查看详情</a>
-                    </div>
-                </div>
-            </div>`;
-            }).join('');
-        })
-        .catch(err => {
-            console.error(err);
-            grid.innerHTML = '<div class="text-muted px-2">数据集加载失败。</div>';
-        });
-}
-
-// 统一接管 # 路由点击，确保 hash 正确更新
-document.body.addEventListener('click', function (e) {
-    const a = e.target.closest('a[href^="#"]');
-    if (!a) return;
-
-    const href = a.getAttribute('href') || '';
-    // 仅处理定义在 routes 中的路由以及详情页路由
-    if (routes[href] || href.startsWith('#dataset-detail')) {
-        e.preventDefault();
-        if (window.location.hash !== href) {
-            window.location.hash = href; // 触发 hashchange → renderFromHash
-        } else {
-            // 若与当前 hash 相同，主动重渲染一次
-            renderFromHash();
-        }
-    }
+document.body.addEventListener('click', event => {
+    const anchor = event.target.closest('a[href^="#"]');
+    if (!anchor) return;
+    const href = anchor.getAttribute('href');
+    const hash = href.split('?')[0];
+    if (!routes[hash]) return;
+    event.preventDefault();
+    const params = new URLSearchParams(href.split('?')[1] || ''); params.set('lang', language);
+    const target = `${hash}?${params}`;
+    if (window.location.hash === target) renderFromHash(); else window.location.hash = target;
 });
-
-
-function renderAboutPage() {
-    fetch('config/about.json')
-        .then(response => response.json())
-        .then(data => {
-            // Lab Info
-            if (data.labInfo) {
-                const labName = document.getElementById('lab-name');
-                if (labName) labName.textContent = data.labInfo.name;
-
-                const labFullname = document.getElementById('lab-fullname');
-                if (labFullname) labFullname.textContent = data.labInfo.fullName;
-
-                const labDesc = document.getElementById('lab-description');
-                if (labDesc) labDesc.textContent = data.labInfo.description;
-            }
-
-            // Research Interests
-            const researchContainer = document.getElementById('research-interests-container');
-            if (researchContainer && data.researchInterests) {
-                researchContainer.innerHTML = '';
-                researchContainer.className = 'research-grid'; // Add grid class
-
-                data.researchInterests.forEach(group => {
-                    const card = document.createElement('div');
-                    card.className = 'research-card';
-
-                    const h6 = document.createElement('h6');
-                    h6.textContent = group.category;
-
-                    card.appendChild(h6);
-                    researchContainer.appendChild(card);
-                });
-            }
-
-            // Research Articles
-            const articlesList = document.getElementById('research-articles-list');
-            if (articlesList && data.researchArticles) {
-                const allArticles = data.researchArticles;
-                const INITIAL_COUNT = 5;
-                const LOAD_STEP = 10;
-                let displayedCount = 0;
-
-                const appendArticles = (start, end) => {
-                    const fragment = document.createDocumentFragment();
-                    const slice = allArticles.slice(start, end);
-                    slice.forEach(article => {
-                        const li = document.createElement('li');
-                        li.className = 'mb-2';
-                        li.textContent = article;
-                        fragment.appendChild(li);
-                    });
-                    articlesList.appendChild(fragment);
-                    displayedCount += slice.length;
-                };
-
-                // Initial load
-                articlesList.innerHTML = ''; // Clear initial content
-                appendArticles(0, INITIAL_COUNT);
-
-                // Load More Button
-                if (allArticles.length > displayedCount) {
-                    const btnContainer = document.createElement('div');
-                    btnContainer.className = 'text-center mt-3';
-
-                    const btn = document.createElement('button');
-                    btn.className = 'btn btn-outline-primary btn-sm';
-                    btn.textContent = '加载更多';
-
-                    btn.onclick = function () {
-                        const nextCount = displayedCount + LOAD_STEP;
-                        appendArticles(displayedCount, nextCount);
-
-                        if (displayedCount >= allArticles.length) {
-                            btnContainer.remove();
-                        }
-                    };
-
-                    btnContainer.appendChild(btn);
-                    articlesList.parentNode.appendChild(btnContainer);
-                }
-            }
-
-            // Cooperative Mentors
-            const mentorsList = document.getElementById('cooperative-mentors-list');
-            if (mentorsList && data.cooperativeMentors) {
-                mentorsList.innerHTML = data.cooperativeMentors.map(m => `<li class="mb-2">${m}</li>`).join('');
-            }
-
-            // Graduated Members
-            const membersList = document.getElementById('graduated-members-list');
-            if (membersList && data.graduatedMembers) {
-                // Clear existing content
-                membersList.innerHTML = '';
-                // Add class for grid layout
-                membersList.classList.add('members-grid');
-
-                data.graduatedMembers.forEach(m => {
-                    const li = document.createElement('li');
-                    li.className = 'member-item';
-                    li.textContent = m;
-                    membersList.appendChild(li);
-                });
-            }
-        })
-        .catch(err => console.error('Failed to load about data:', err));
-}
-

@@ -8,7 +8,9 @@
             "mdFile": "ac-ccm",
             "featured": true,
             "hidden": true,
-            "icon": "fa-solid fa-icons"
+            "icon": "fa-solid fa-icons",
+            "descriptionEn": "AC-CCM is the first dataset focused on aesthetic mood recognition in Chinese traditional music. Based on the Twenty-Four Conditions framework in the Qing-dynasty qin treatise Xishan Qinkuang, it covers multiple instruments, periods, and styles.",
+            "imageAltEn": "Dataset icon"
         },
         {
             "id": "gzvarmsa",
@@ -17,7 +19,9 @@
             "imageAlt": "数据集图标",
             "mdFile": "GZVarMSA",
             "featured": false,
-            "icon": "fa-solid fa-music"
+            "icon": "fa-solid fa-music",
+            "descriptionEn": "GZVarMSA is a Chinese guzheng variation dataset for music structure analysis. It contains 80 traditional zheng pieces and 18,081 seconds of audio, covering the Chaozhou, Shandong, Shaanxi, and Zhejiang schools, with manual annotations of structural complexity.",
+            "imageAltEn": "Dataset icon"
         },
         {
             "id": "xfid",
@@ -26,7 +30,20 @@
             "imageAlt": "数据集图标",
             "mdFile": "XFID",
             "featured": false,
-            "icon": "fa-solid fa-music"
+            "icon": "fa-solid fa-music",
+            "descriptionEn": "XFID is a Xinjiang folk instrument dataset for automatic music transcription. It covers dutar, satar, and tanbur, and contains approximately four hours of lossless recordings, aligned MIDI annotations, and readable scores.",
+            "imageAltEn": "Dataset icon"
+        },
+        {
+            "id": "live-music-denoising",
+            "name": "Live Music Denoising",
+            "description": "面向真实现场音乐降噪的数据集，包含 146 个音乐源录音、1,078 个干净音乐片段，约 626 分钟。公开源链接、片段时间戳及 Normal、Strong、Extreme 三档基准噪声生成元数据，不直接分发音频。",
+            "imageAlt": "现场音乐降噪数据集",
+            "mdFile": "LiveMusicDenoising",
+            "featured": false,
+            "icon": "fa-solid fa-headphones",
+            "descriptionEn": "A dataset for authentic live music denoising, containing 146 music source recordings and 1,078 clean music excerpts, approximately 626 minutes in total. It releases source URLs, excerpt timestamps, and benchmark noise generation metadata for Normal, Strong, and Extreme conditions, without directly distributing audio.",
+            "imageAltEn": "Live music denoising dataset"
         }
     ]
 }
