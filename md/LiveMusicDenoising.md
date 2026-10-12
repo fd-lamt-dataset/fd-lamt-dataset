@@ -28,7 +28,7 @@
 - `metadata/benchmark_noise_generation_metadata_Strong.csv`：Strong 基准噪声条件的生成元数据。
 - `metadata/benchmark_noise_generation_metadata_Extreme.csv`：Extreme 基准噪声条件的生成元数据。
 
-[下载元数据（ZIP）](asset/downloads/live-music-denoising/metadata.zip)
+<p><a class="metadata-download" href="asset/downloads/live-music-denoising/metadata.zip" download><i class="fa-solid fa-download" aria-hidden="true"></i> 下载元数据（ZIP）</a></p>
 
 ## 元数据结构
 

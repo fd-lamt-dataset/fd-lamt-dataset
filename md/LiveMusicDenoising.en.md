@@ -28,7 +28,7 @@ For the benchmark partition, this release provides benchmark noise generation me
 - `metadata/benchmark_noise_generation_metadata_Strong.csv`: generation metadata for the Strong benchmark noise condition.
 - `metadata/benchmark_noise_generation_metadata_Extreme.csv`: generation metadata for the Extreme benchmark noise condition.
 
-[Download metadata (ZIP)](asset/downloads/live-music-denoising/metadata.zip)
+<p><a class="metadata-download" href="asset/downloads/live-music-denoising/metadata.zip" download><i class="fa-solid fa-download" aria-hidden="true"></i> Download metadata (ZIP)</a></p>
 
 ## Metadata Schema
 
