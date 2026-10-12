@@ -4,7 +4,7 @@
 
 本仓库提供以下论文所述数据集的元数据：
 
-> 使用真实现场数据与音轨编辑引导的半监督学习进行现场音乐降噪。
+> Live Music Denoising with Authentic Live Data and Track-Editing-Guided Semi-Supervised Learning.
 
 该数据集为现场音乐降噪研究而构建。它基于 [Bilibili](https://www.bilibili.com/) 和 Archive.org 上可公开访问的现场录音，以支持真实现场噪声条件下的训练与基准评测。
 
