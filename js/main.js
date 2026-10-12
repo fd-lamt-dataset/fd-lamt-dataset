@@ -120,6 +120,13 @@ async function renderFromHash() {
         const html = await fetchText(`${route.url}${lang === 'en' ? '.en' : ''}.html`);
         if (version !== renderVersion) return;
         main.innerHTML = html;
+        if (hash === '#home' || !routes[hash]) {
+            const link = main.querySelector('.hero-mirror-link');
+            const domestic = window.location.hostname === '118.25.191.236';
+            const label = domestic ? (lang === 'zh' ? 'GitHub Pages 访问入口' : 'GitHub Pages mirror') : (lang === 'zh' ? '国内访问入口' : 'China mirror');
+            link.href = `${domestic ? 'https://fd-lamt-dataset.github.io/fd-lamt-dataset/' : 'http://118.25.191.236:8000/'}#home?lang=${lang}`;
+            link.innerHTML = `<i class="fa-solid fa-globe me-2" aria-hidden="true"></i>${label}`;
+        }
         if (hash === '#dataset') await renderDatasetList(version, lang);
         if (hash === '#dataset-detail') await renderDatasetDetail(version, lang, params);
         if (hash === '#about') await renderAboutPage(version, lang);
