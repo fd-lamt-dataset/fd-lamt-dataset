@@ -1,4 +1,4 @@
-# Live Music Denoising Dataset
+# Live Music Denoising
 
 This repository provides the metadata for the dataset described in:
 
