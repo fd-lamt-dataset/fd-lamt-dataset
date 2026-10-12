@@ -37,12 +37,12 @@
         {
             "id": "live-music-denoising",
             "name": "Live Music Denoising",
-            "description": "面向真实现场音乐降噪的数据集，包含 146 个音乐源录音、1,078 个干净音乐片段，约 626 分钟。公开源链接、片段时间戳及 Normal、Strong、Extreme 三档基准噪声生成元数据，不直接分发音频。",
+            "description": "面向真实现场音乐降噪的数据集，包含 146 个音乐源录音、1,078 个干净音乐片段，约 626 分钟。公开源链接、片段时间戳及 Normal、Strong、Extreme 三档基准噪声生成元数据。",
             "imageAlt": "现场音乐降噪数据集",
             "mdFile": "LiveMusicDenoising",
             "featured": false,
             "icon": "fa-solid fa-headphones",
-            "descriptionEn": "A dataset for authentic live music denoising, containing 146 music source recordings and 1,078 clean music excerpts, approximately 626 minutes in total. It releases source URLs, excerpt timestamps, and benchmark noise generation metadata for Normal, Strong, and Extreme conditions, without directly distributing audio.",
+            "descriptionEn": "A dataset for authentic live music denoising, containing 146 music source recordings and 1,078 clean music excerpts, approximately 626 minutes in total. It releases source URLs, excerpt timestamps, and benchmark noise generation metadata for Normal, Strong, and Extreme conditions.",
             "imageAltEn": "Live music denoising dataset"
         }
     ]
