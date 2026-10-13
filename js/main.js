@@ -1,3 +1,14 @@
+// Measure the browser's native scrollbar without assuming a platform-specific width.
+function updateScrollbarWidth() {
+    const probe = document.createElement('div');
+    probe.style.cssText = 'position:absolute;left:-9999px;width:100px;height:100px;overflow:scroll;scrollbar-gutter:stable;visibility:hidden';
+    document.body.appendChild(probe);
+    document.documentElement.style.setProperty('--native-scrollbar-width', `${probe.offsetWidth - probe.clientWidth}px`);
+    probe.remove();
+}
+updateScrollbarWidth();
+window.addEventListener('resize', updateScrollbarWidth);
+
 const routes = {
     '#home': { url: 'content-home', index: 0 },
     '#dataset': { url: 'content-dataset', index: 1 },
@@ -31,7 +42,7 @@ function updateLanguageControls() {
     button.setAttribute('aria-label', language === 'en' ? '切换到中文' : 'Switch to English');
 }
 async function fetchText(path) {
-    const response = await fetch(`${path}?v=20261012bilingual`, { cache: 'no-store' });
+    const response = await fetch(`${path}?v=20261013layout`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}: ${path}`);
     return response.text();
 }
@@ -75,7 +86,19 @@ async function renderDatasetDetail(version, lang, params) {
     if (version !== renderVersion) return;
     const firstLine = text.split('\n').find(line => line.startsWith('# '));
     document.getElementById('md-title').textContent = firstLine ? firstLine.slice(2).trim() : md;
-    document.getElementById('md-root').innerHTML = window.marked.parse(text, { gfm: true, breaks: true });
+    const root = document.getElementById('md-root');
+    root.innerHTML = window.marked.parse(text, { gfm: true, breaks: true });
+    // The page header already displays the document title.
+    if (root.firstElementChild?.tagName === 'H1') root.firstElementChild.remove();
+    root.querySelectorAll('table').forEach((table, index) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-scroll';
+        wrapper.tabIndex = 0;
+        wrapper.setAttribute('role', 'region');
+        wrapper.setAttribute('aria-label', lang === 'zh' ? `表格 ${index + 1}，可横向滚动` : `Table ${index + 1}, scroll horizontally`);
+        table.before(wrapper);
+        wrapper.appendChild(table);
+    });
 }
 async function renderAboutPage(version, lang) {
     const data = JSON.parse(await fetchText(`config/about${lang === 'en' ? '.en' : ''}.json`));
@@ -113,7 +136,10 @@ async function renderFromHash() {
     updateLanguageControls();
     const { hash, params } = getHashAndQuery();
     const route = routes[hash] || routes['#home'];
-    document.querySelectorAll('.nav-link').forEach((a, i) => a.classList.toggle('active', i === route.index));
+    document.querySelectorAll('.nav-link').forEach((a, i) => {
+        a.classList.toggle('active', i === route.index);
+        if (i === route.index) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
     const main = document.getElementById('main-content');
     main.setAttribute('aria-busy', 'true');
     try {
