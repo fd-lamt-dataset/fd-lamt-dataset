@@ -50,7 +50,7 @@ function updateLanguageControls() {
     button.setAttribute('aria-label', language === 'en' ? '切换到中文' : 'Switch to English');
 }
 async function fetchText(path) {
-    const response = await fetch(`${path}?v=20261102cnpmmetadata`, { cache: 'no-store' });
+    const response = await fetch(`${path}?v=20261102cnpmdemo5`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}: ${path}`);
     return response.text();
 }
@@ -107,10 +107,9 @@ async function renderDatasetDetail(version, lang, params) {
         wrapper.setAttribute('aria-label', lang === 'zh' ? `表格 ${index + 1}，可横向滚动` : `Table ${index + 1}, scroll horizontally`);
         table.before(wrapper);
         wrapper.appendChild(table);
-        if (table.querySelector('audio') || table.classList.contains('cnpm-source-table')) {
-            const hasAudio = !!table.querySelector('audio');
-            wrapper.classList.add(hasAudio ? 'audio-samples' : 'metadata-samples');
-            wrapper.setAttribute('aria-label', hasAudio ? (lang === 'zh' ? '音频样例' : 'Audio samples') : (lang === 'zh' ? '曲目元数据' : 'Track metadata'));
+        if (table.querySelector('audio')) {
+            wrapper.classList.add('audio-samples');
+            wrapper.setAttribute('aria-label', lang === 'zh' ? '音频样例' : 'Audio samples');
             const headings = Array.from(table.querySelectorAll('thead th'), th => th.textContent.trim());
             const carried = [];
             table.querySelectorAll('tbody tr').forEach(row => {

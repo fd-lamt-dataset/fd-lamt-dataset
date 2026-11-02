@@ -51,5 +51,46 @@
       "file": "jue_shortest.wav",
       "sha256": "0ab4ce420ad81e7bf22f856ef6f654d781deb426952f41ac9709caa221bec030"
     }
+  ],
+  "metadata_examples": [
+    {
+      "dataset_row_index": 235,
+      "title": "仙翁操",
+      "artist": "龚一",
+      "pattern": "Gong",
+      "system": "C",
+      "tonic": "C",
+      "scale_type": "Hexatonic_Qingjue",
+      "mode_annotation": "C宫六声加清角",
+      "recording_duration_seconds": 57.130862,
+      "source_page_url": "https://music.163.com/#/song?id=34033640",
+      "source_match_status": "title_artist_matched_version_not_verified"
+    },
+    {
+      "dataset_row_index": 164,
+      "title": "采茶调",
+      "artist": "龚一",
+      "pattern": "Yu",
+      "system": "F",
+      "tonic": "D",
+      "scale_type": "Pentatonic",
+      "mode_annotation": "D羽五声调式",
+      "recording_duration_seconds": 60.396168,
+      "source_page_url": "https://music.163.com/#/song?id=34033639",
+      "source_match_status": "title_artist_matched_version_not_verified"
+    },
+    {
+      "dataset_row_index": 107,
+      "title": "满江红",
+      "artist": "胡思琴",
+      "pattern": "Zhi",
+      "system": "E",
+      "tonic": "B",
+      "scale_type": "Pentatonic",
+      "mode_annotation": "B徵五声",
+      "recording_duration_seconds": 123.063923,
+      "source_page_url": "https://music.163.com/#/song?id=478236699",
+      "source_match_status": "title_artist_matched_version_not_verified"
+    }
   ]
 }

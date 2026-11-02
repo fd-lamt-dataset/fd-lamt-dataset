@@ -15,3 +15,7 @@ Selected from the complete local default/train dataset (287 recordings):
 Compare exact decoded frame counts divided by sample rate within each pattern; ties use the earlier dataset row. All 45 Shang and 49 Jue recordings were considered. Audio bytes are copied intact from the Arrow dataset, with no trimming, resampling, normalization, or re-encoding. Curated filenames are used for stable URLs; original filenames and checksums are recorded in samples.json.
 
 The source dataset contains third-party recordings; rights in those recordings remain with the respective owners. Refer to the dataset access conditions and license for reuse.
+
+## Metadata-only demo rows
+
+The same website demo table includes one public song-page reference for each other pattern: 仙翁操 / 龚一 (Gong), 采茶调 / 龚一 (Yu), and 满江红 / 胡思琴 (Zhi). No audio for these three tracks is copied or embedded. Selection and source-page matching details are in samples.json. The public pages match dataset titles/artists; identical recording versions are not verified.
