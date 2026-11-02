@@ -1,0 +1,194 @@
+﻿recording_id,dataset_row_index,title,artist,pattern,system,tonic,scale_type,mode_annotation,recording_duration_seconds,source_platform,source_page_url,album,platform_display_duration,source_match_status
+cnpm-000,0,送别,黄江琴,Gong,G,G,Heptatonic_Qingyue,G宫七声清乐,185.6,,,,,source_pending
+cnpm-001,1,渔舟唱晚,赵晓霞,Gong,D,D,Pentatonic,D宫五声调式,248.478912,,,,,source_pending
+cnpm-002,2,草原上升起不落的太阳,朝克吉勒图,Yu,E,#C/bD,Pentatonic,升C羽五声,225.506848,,,,,source_pending
+cnpm-003,3,良宵 (古筝独奏),项斯华,Gong,G,G,Hexatonic_Biangong,G宫六声+变宫,215.533333,,,,,source_pending
+cnpm-005,5,洞庭秋思,成公亮,Zhi,C,G,Heptatonic_Qingyue,G徵清乐七声调式,201.588005,NetEase Cloud Music,https://music.163.com/#/song?id=5244619,凤凰和鸣,03:21,title_artist_matched_version_not_verified
+cnpm-007,7,梅花三弄 (古筝独奏),项斯华,Gong,D,D,Pentatonic,D宫五声调式,353.506077,NetEase Cloud Music,https://music.163.com/#/song?id=520568427,中国古筝金曲 (33首),05:48,title_artist_matched_version_not_verified
+cnpm-010,10,映山红,龚一,Yu,F,D,Pentatonic,D羽五声,95.008413,NetEase Cloud Music,https://music.163.com/#/song?id=34033638,古琴演奏法,01:34,title_artist_matched_version_not_verified
+cnpm-011,11,在水一方,纯音乐,Gong,D,D,Heptatonic_Qingyue,D宫七声清乐,228.063107,,,,,source_pending
+cnpm-015,15,梅花三弄,王珣,Gong,D,D,Pentatonic,D宫五声,307.426961,,,,,source_pending
+cnpm-016,16,长门怨,龚一,Gong,F,F,Heptatonic_Qingyue,F宫清乐,345.836168,NetEase Cloud Music,https://music.163.com/#/song?id=34033650,古琴演奏法,05:45,title_artist_matched_version_not_verified
+cnpm-018,18,平湖,群星,Gong,#D/bE,#D/bE,Pentatonic,降E宫五声,187.259841,,,,,source_pending
+cnpm-021,21,蓝花花,贠恩凤,Yu,F,D,Pentatonic,D羽五声调式,261.720091,,,,,source_pending
+cnpm-022,22,慢吟,曹永安,Gong,#F/bG,#F/bG,Pentatonic,#F宫五声,139.134966,,,,,source_pending
+cnpm-023,23,敖包相会 Meet at Aobao,华语群星,Yu,D,B,Hexatonic_Biangong,B羽六声+变宫,195.004082,,,,,source_pending
+cnpm-024,24,秋水伊人 (古筝独奏),项斯华,Gong,C,C,Hexatonic_Biangong,C宫六声+变宫,205.893333,,,,,source_pending
+cnpm-025,25,西江月,林玲,Gong,G,G,Heptatonic_Qingyue,G宫清乐七声,168.573651,,,,,source_pending
+cnpm-026,26,双鹤听泉,朱子易,Gong,F,F,Pentatonic,F宫五声,136.360249,,,,,source_pending
+cnpm-027,27,若水江南,马雨贤,Gong,C,C,Pentatonic,C宫五声,273.189637,,,,,source_pending
+cnpm-028,28,月儿弯弯照九州(纯音乐),朱昌耀,Zhi,G,D,Pentatonic,D徵五声,270.198617,,,,,source_pending
+cnpm-032,32,月下海棠,王次恒,Yu,F,D,Heptatonic_Qingyue,D羽七声清乐,269.4139,,,,,source_pending
+cnpm-033,33,飞花点翠,杨瑾,Zhi,D,A,Heptatonic_Qingyue,A徵清乐七声调式,324.212517,,,,,source_pending
+cnpm-034,34,银河碧波,群星,Yu,#G/bA,F,Pentatonic,F羽五声,260.193719,,,,,source_pending
+cnpm-035,35,孟姜女(古筝),玉树不临风,Zhi,D,A,Pentatonic,A徵五声,129.420975,,,,,source_pending
+cnpm-036,36,远方的客人请你留下来,纯音乐,Gong,#D/bE,#D/bE,Hexatonic_Qingjue,降E宫六声+清角,181.394286,,,,,source_pending
+cnpm-038,38,小剪剪花,王中山,Zhi,D,A,Pentatonic,A徵五声调式,78.497959,,,,,source_pending
+cnpm-039,39,古琴吟,邬昳帆,Gong,C,C,Pentatonic,C宫五声,114.0,,,,,source_pending
+cnpm-043,43,闲趣,龚一,Yu,F,D,Hexatonic_Qingjue,D羽六声加清角,111.988005,NetEase Cloud Music,https://music.163.com/#/song?id=34033636,古琴演奏法,01:51,title_artist_matched_version_not_verified
+cnpm-045,45,十大姐（云南花灯调）,沐阳逸风,Yu,C,A,Pentatonic,A羽五声调式,309.289796,,,,,source_pending
+cnpm-047,47,浏阳河,于秋旋,Zhi,D,A,Pentatonic,A徵五声调式,224.90712,,,,,source_pending
+cnpm-049,49,阿里山的姑娘,群星,Yu,D,B,Pentatonic,B羽五声,203.35127,,,,,source_pending
+cnpm-050,50,牧羊姑娘,朝克吉勒图,Yu,C,A,Hexatonic_Biangong,A羽六声+变宫,237.467211,,,,,source_pending
+cnpm-051,51,中花六板,上海江南丝竹协会,Zhi,D,A,Heptatonic_Qingyue,A徵七声清乐,536.699841,,,,,source_pending
+cnpm-053,53,渔舟唱晚,赵玉齐,Gong,D,D,Hexatonic_Qingjue,D宫六声+清角,195.52,,,,,source_pending
+cnpm-055,55,儿歌,龚一,Gong,F,F,Pentatonic,F宫五声调式,45.036168,,,,,source_pending
+cnpm-056,56,平沙落雁,管平湖,Yu,#F/bG,#D/bE,Pentatonic,bE羽五声,409.209229,NetEase Cloud Music,https://music.163.com/#/song?id=88137,古琴,06:49,title_artist_matched_version_not_verified
+cnpm-057,57,关山月,赵晓霞古琴,Gong,F,F,Pentatonic,F宫五声调式,136.04678,NetEase Cloud Music,https://music.163.com/#/song?id=393671,中国民乐大师纯独奏鉴赏全集:古琴,02:16,title_artist_matched_version_not_verified
+cnpm-059,59,苏武思乡,赵晓霞,Gong,G,G,Hexatonic_Biangong,G宫六声+变宫,254.45424,,,,,source_pending
+cnpm-060,60,春风得意,林翠萍,Gong,#D/bE,#D/bE,Pentatonic,bE宫五声调式,164.872902,,,,,source_pending
+cnpm-061,61,小白杨,阎维文,Gong,F,F,Pentatonic,F宫五声调式,171.547188,NetEase Cloud Music,https://music.163.com/#/song?id=5271259,龙的声音3 妈妈的歌谣,02:53,title_artist_matched_version_not_verified
+cnpm-063,63,刮地风,廖莎,Zhi,G,D,Pentatonic,D徵五声调式,51.148821,,,,,source_pending
+cnpm-064,64,清夜吟,胡思琴,Gong,C,C,Hexatonic_Qingjue,C宫六声加清角,249.313719,,,,,source_pending
+cnpm-065,65,上楼,于秋旋,Gong,G,G,Pentatonic,G宫五声,152.292336,,,,,source_pending
+cnpm-066,66,美丽的草原我的家,德德玛,Gong,A,A,Pentatonic,A宫五声调式,202.000385,,,,,source_pending
+cnpm-067,67,扬鞭催马运粮忙(笛子独奏),华夏民族乐团,Zhi,F,C,Pentatonic,C徵五声调式,249.226667,,,,,source_pending
+cnpm-070,70,康定情歌,纯音乐,Yu,A,#F/bG,Hexatonic_Biangong,升F羽六声+变宫,159.608163,,,,,source_pending
+cnpm-071,71,十面埋伏,刘德海,Gong,D,D,Pentatonic,D宫五声,321.78712,,,,,source_pending
+cnpm-072,72,西厢词,于秋璇,Zhi,G,D,Hexatonic_Biangong,D徵六声调式?变宫,111.988005,NetEase Cloud Music,https://music.163.com/#/song?id=393657,古筝,01:51,title_artist_matched_version_not_verified
+cnpm-073,73,山清水秀太阳高,龚玥,Zhi,F,C,Pentatonic,C徵五声调式,247.893401,,,,,source_pending
+cnpm-074,74,关山月(古筝)(Live),艺筝乐团,Gong,D,D,Pentatonic,D宫五声,98.292971,,,,,source_pending
+cnpm-075,75,边疆泉水清又纯,李谷一,Gong,D,D,Pentatonic,D宫五声调式,169.506848,,,,,source_pending
+cnpm-076,76,风雷引,龚一,Gong,C,C,Pentatonic,C宫五声调式,182.649229,NetEase Cloud Music,https://music.163.com/#/song?id=34033644,古琴演奏法,03:02,title_artist_matched_version_not_verified
+cnpm-077,77,南乡小调,赵良山,Zhi,A,E,Hexatonic_Biangong,E徵六声+变宫,170.773537,,,,,source_pending
+cnpm-078,78,广陵散,饶宁新,Gong,D,D,Heptatonic_Qingyue,D宫七声清乐,206.427392,,,,,source_pending
+cnpm-079,79,怀念曲,吴晓燕,Gong,F,F,Pentatonic,F宫五声调式,233.116735,,,,,source_pending
+cnpm-082,82,高山流水,王昌元,Yu,C,A,Heptatonic_Qingyue,A羽清乐七声,318.120249,,,,,source_pending
+cnpm-083,83,沉默是金,付娜,Gong,D,D,Pentatonic,D宫五声调式,263.534263,,,,,source_pending
+cnpm-085,85,潇湘水云,王丽达,Yu,#D/bE,C,Pentatonic,C羽五声调式,281.745011,,,,,source_pending
+cnpm-086,86,爱情骗子我问你,纯音乐,Yu,C,A,Hexatonic_Biangong,A羽六声+变宫,249.300658,,,,,source_pending
+cnpm-087,87,乌苏里船歌,纯音乐,Gong,G,G,Pentatonic,G宫五声,189.570612,,,,,source_pending
+cnpm-089,89,三十三板,于秋璇,Gong,D,D,Hexatonic_Qingjue,D宫六声加清角,163.933333,,,,,source_pending
+cnpm-090,90,紫竹调,群星,Yu,D,B,Heptatonic_Qingyue,B羽七声清乐,198.533288,,,,,source_pending
+cnpm-091,91,汉宫秋月,赵玉齐,Gong,#C/bD,#C/bD,Pentatonic,#C宫五声,193.000045,,,,,source_pending
+cnpm-092,92,林冲夜奔(1),郁红,Yu,C,A,Hexatonic_Biangong,A羽六声+变宫,136.0,,,,,source_pending
+cnpm-093,93,父老乡亲,彭丽媛,Zhi,G,D,Heptatonic_Qingyue,D徵七声清乐,275.373719,,,,,source_pending
+cnpm-094,94,渔光曲,付娜,Gong,D,D,Pentatonic,D宫五声,284.565964,,,,,source_pending
+cnpm-095,95,杨翠喜,黄金成,Zhi,G,D,Heptatonic_Yanyue,D徵七声燕乐,170.386803,,,,,source_pending
+cnpm-096,96,喜相逢,俞逊发,Zhi,C,G,Heptatonic_Qingyue,G徵七声清乐,180.61381,,,,,source_pending
+cnpm-098,98,浪淘沙,赵晓霞,Yu,D,B,Pentatonic,B羽五声调式,89.266395,,,,,source_pending
+cnpm-099,99,孟姜女 (江苏民歌),鞠秀芳,Zhi,G,D,Pentatonic,D徵五声调式,195.527596,NetEase Cloud Music,https://music.163.com/#/song?id=5272293,中国纯美民间小调集2 达坂城的姑娘,03:15,title_artist_matched_version_not_verified
+cnpm-100,100,採莲曲 (古筝独奏),项斯华,Gong,G,G,Hexatonic_Biangong,G宫六声+变宫,205.533333,,,,,source_pending
+cnpm-101,101,枣园春色,纯音乐,Zhi,D,A,Hexatonic_Biangong,A徵六声+变宫,277.133152,,,,,source_pending
+cnpm-103,103,我爱祖国的大草原,朝克吉勒图,Gong,A,A,Pentatonic,A宫五声,240.867302,,,,,source_pending
+cnpm-105,105,槐花几时开,李双江,Yu,G,E,Pentatonic,E羽五声调式,112.173333,,,,,source_pending
+cnpm-106,106,汉宫秋月,于秋璇,Gong,D,D,Pentatonic,D宫五声,283.847596,,,,,source_pending
+cnpm-107,107,满江红,胡思琴,Zhi,E,B,Pentatonic,B徵五声,123.063923,NetEase Cloud Music,https://music.163.com/#/song?id=478236699,《古琴自修入门》示范演奏,02:03,title_artist_matched_version_not_verified
+cnpm-108,108,越人歌,宋祖英,Gong,G,G,Pentatonic,G宫五声调式,226.12,,,,,source_pending
+cnpm-112,112,小霓裳,王昌元（男）,Zhi,#D/bE,#A/bB,Heptatonic_Qingyue,降B徵七声清乐,274.400204,,,,,source_pending
+cnpm-113,113,小月儿高,何树风,Zhi,#D/bE,#A/bB,Heptatonic_Yanyue,降B徵七声燕乐,108.240204,,,,,source_pending
+cnpm-114,114,姑苏行,俞逊发,Gong,C,C,Heptatonic_Qingyue,C宫七声清乐,269.307029,,,,,source_pending
+cnpm-115,115,黄水谣,郑咏,Gong,F,F,Pentatonic,F宫五声调式,206.226667,,,,,source_pending
+cnpm-116,116,扬鞭催马运粮忙,纯音乐,Zhi,D,A,Hexatonic_Biangong,A徵六声+变宫,223.83127,,,,,source_pending
+cnpm-117,117,渔家姑娘 Piscatorial girl,华语群星,Zhi,A,E,Heptatonic_Qingyue,E徵七声清乐,264.019592,,,,,source_pending
+cnpm-118,118,珊瑚颂,纯音乐,Gong,#A/bB,#A/bB,Hexatonic_Biangong,降B宫六声+变宫,186.488163,,,,,source_pending
+cnpm-120,120,草原上升起不落的太阳,蒋大为,Yu,A,#F/bG,Pentatonic,升F羽五声调式,176.213333,,,,,source_pending
+cnpm-122,122,杜宇魂,群星,Gong,#A/bB,#A/bB,Pentatonic,降B宫五声,170.17576,,,,,source_pending
+cnpm-124,124,银河碧波,付娜,Yu,G,E,Pentatonic,E羽五声调式,291.801882,,,,,source_pending
+cnpm-125,125,彩云追月,纯音乐,Gong,C,C,Heptatonic_Qingyue,C宫清乐七声调式,187.933084,,,,,source_pending
+cnpm-126,126,绿岛小夜曲,李茂山,Gong,F,F,Pentatonic,F宫五声调式,237.76,,,,,source_pending
+cnpm-127,127,咕噜山歌,龚琳娜,Zhi,#A/bB,F,Pentatonic,F徵五声调式,96.339592,,,,,source_pending
+cnpm-128,128,良宵引,管平湖,Zhi,B,#F/bG,Pentatonic,升F徵五声调式,190.493492,,,,,source_pending
+cnpm-130,130,出水莲 (古筝独奏版),项斯华,Gong,C,C,Hexatonic_Biangong,C宫六声+变宫,305.093333,,,,,source_pending
+cnpm-133,133,流水行云,中央民族乐团,Zhi,C,G,Hexatonic_Qingjue,G徵六声加清角,250.239456,,,,,source_pending
+cnpm-135,135,渔樵问答,刘星,Gong,G,G,Heptatonic_Qingyue,G宫七声清乐,428.200249,,,,,source_pending
+cnpm-136,136,秦桑曲 (古筝独奏),项斯华,Zhi,D,A,Heptatonic_Qingyue,A徵七声清乐,335.32,,,,,source_pending
+cnpm-138,138,小放牛,李娜,Zhi,D,A,Pentatonic,A徵五声调式,223.893787,,,,,source_pending
+cnpm-141,141,万马奔腾,朝克吉勒图,Gong,#C/bD,#C/bD,Hexatonic_Biangong,降D宫六声+变宫,204.560998,,,,,source_pending
+cnpm-142,142,锦上添花 (古筝独奏),项斯华,Gong,G,G,Pentatonic,G宫五声,205.533333,,,,,source_pending
+cnpm-143,143,灯月交辉,群星,Gong,G,G,Pentatonic,G宫五声调式,246.893107,,,,,source_pending
+cnpm-144,144,竹楼情歌,哏德全,Gong,F,F,Pentatonic,F宫五声,255.269637,NetEase Cloud Music,https://music.163.com/#/song?id=88875,葫芦丝独奏Vo1.1,04:15,title_artist_matched_version_not_verified
+cnpm-145,145,雨打芭蕉 (广东音乐),华夏民族乐团,Zhi,C,G,Heptatonic_Qingyue,G徵七声清乐,223.973333,,,,,source_pending
+cnpm-146,146,扬州慢,纯音乐,Gong,D,D,Heptatonic_Yayue,D宫七声雅乐,207.504739,,,,,source_pending
+cnpm-148,148,康定情歌,卓依婷,Yu,C,A,Pentatonic,A羽五声调式,187.983401,,,,,source_pending
+cnpm-149,149,倒垂帘,华语群星,Zhi,G,D,Heptatonic_Qingyue,D徵七声清乐,213.334717,,,,,source_pending
+cnpm-150,150,西厢词,群星,Zhi,#G/bA,#D/bE,Pentatonic,降E徵五声,191.465556,,,,,source_pending
+cnpm-151,151,长亭怨慢,纯音乐,Gong,G,G,Heptatonic_Qingyue,G宫七声清乐,155.742041,,,,,source_pending
+cnpm-152,152,睡莲(中阮独奏),徐阳,Yu,F,D,Hexatonic_Biangong,D羽六声加变宫,367.047596,NetEase Cloud Music,https://music.163.com/#/song?id=315687,玉楼月.花下醉,06:07,title_artist_matched_version_not_verified
+cnpm-154,154,良宵,阿炳,Gong,D,D,Hexatonic_Biangong,D宫六声调式?变宫,219.066848,,,,,source_pending
+cnpm-155,155,子夜四时歌,张星_陈勇玲,Gong,B,B,Heptatonic_Yanyue,B宫七声燕乐,327.853333,,,,,source_pending
+cnpm-158,158,黄鹂亮翅,张维良,Zhi,#A/bB,F,Heptatonic_Qingyue,F徵七声清乐,249.483515,,,,,source_pending
+cnpm-161,161,暗香,纯音乐,Gong,G,G,Heptatonic_Qingyue,G宫七声清乐,215.431837,,,,,source_pending
+cnpm-164,164,采茶调,龚一,Yu,F,D,Pentatonic,D羽五声调式,60.396168,NetEase Cloud Music,https://music.163.com/#/song?id=34033639,古琴演奏法,01:00,title_artist_matched_version_not_verified
+cnpm-165,165,凤求凰,柏常青,Zhi,C,G,Pentatonic,G徵五声,122.725193,,,,,source_pending
+cnpm-166,166,蛟龙吐珠,林玲,Gong,D,D,Heptatonic_Qingyue,D宫七声清乐,235.640091,,,,,source_pending
+cnpm-167,167,1级-小鸟朝凤,儿童歌曲,Gong,D,D,Heptatonic_Qingyue,D宫清乐七声,113.241882,,,,,source_pending
+cnpm-169,169,花下醉(中阮独奏),徐阳,Gong,G,G,Hexatonic_Qingjue,G宫六声加清角,355.057392,,,,,source_pending
+cnpm-170,170,琴师(古筝版),玉面小嫣然,Yu,#A/bB,G,Hexatonic_Biangong,G羽变宫六声调式,303.896576,,,,,source_pending
+cnpm-172,172,红星照我去战斗,李双江,Gong,F,F,Pentatonic,F宫五声调式,142.146372,,,,,source_pending
+cnpm-173,173,阿里山的姑娘,女子十二乐坊,Yu,D,B,Pentatonic,B羽五声调式,206.453333,,,,,source_pending
+cnpm-174,174,极乐吟,陈雷激,Yu,#A/bB,G,Pentatonic,G羽五声,137.509637,NetEase Cloud Music,https://music.163.com/#/song?id=73409,梅庵琴谱,02:17,title_artist_matched_version_not_verified
+cnpm-176,176,蒙古人,朝克吉勒图,Yu,D,B,Hexatonic_Biangong,B羽六声+变宫,251.812154,,,,,source_pending
+cnpm-178,178,驼铃,纯音乐,Gong,F,F,Heptatonic_Qingyue,F宫七声清乐,197.026667,,,,,source_pending
+cnpm-179,179,春晓吟,龚一,Yu,F,D,Pentatonic,D羽五声调式,261.068821,NetEase Cloud Music,https://music.163.com/#/song?id=34033647,古琴演奏法,04:20,title_artist_matched_version_not_verified
+cnpm-180,180,杏花天影,陈增智,Yu,F,D,Heptatonic_Yayue,D羽七声雅乐,451.013333,,,,,source_pending
+cnpm-181,181,良宵引,龚一,Gong,F,F,Pentatonic,F宫五声,203.599433,,,,,source_pending
+cnpm-182,182,枉凝眉,刘宽忍,Yu,F,D,Heptatonic_Qingyue,D羽七声清乐,331.233719,NetEase Cloud Music,https://music.163.com/#/song?id=131524,闻埙,05:35,title_artist_matched_version_not_verified
+cnpm-184,184,阿瓦人民唱新歌,常思思,Yu,#G/bA,F,Pentatonic,F羽五声调式,213.48678,,,,,source_pending
+cnpm-185,185,赶花会,何树风,Yu,C,A,Heptatonic_Qingyue,A羽七声清乐,268.627438,,,,,source_pending
+cnpm-186,186,拉纤歌,龚一,Yu,F,D,Pentatonic,D羽五声,111.021474,NetEase Cloud Music,https://music.163.com/#/song?id=34033635,古琴演奏法,01:50,title_artist_matched_version_not_verified
+cnpm-187,187,大红枣儿送亲人 Give bright red chinese date to the kin,华语群星,Zhi,G,D,Heptatonic_Qingyue,D徵七声清乐,111.020408,,,,,source_pending
+cnpm-188,188,高山流水,赵晓霞,Zhi,D,A,Pentatonic,A徵五声调式,332.880272,,,,,source_pending
+cnpm-189,189,嘎达梅林,朝克吉勒图,Yu,C,A,Pentatonic,A羽五声调式,268.573968,,,,,source_pending
+cnpm-190,190,敖包相会,朝克吉勒图,Yu,#D/bE,C,Pentatonic,C羽五声,180.598617,,,,,source_pending
+cnpm-197,197,海青拿天鹅 (古筝独奏),项斯华,Zhi,G,D,Heptatonic_Qingyue,D徵七声清乐,218.626667,,,,,source_pending
+cnpm-198,198,下楼,赵晓霞,Gong,G,G,Pentatonic,G宫五声,149.199546,,,,,source_pending
+cnpm-200,200,北进宫,群星,Yu,#D/bE,C,Hexatonic_Biangong,C羽六声+变宫,185.300658,,,,,source_pending
+cnpm-204,204,平湖秋月,群星,Zhi,G,D,Heptatonic_Qingyue,D徵七声清乐,280.961066,,,,,source_pending
+cnpm-205,205,春晓吟(2),龚一,Yu,F,D,Pentatonic,D羽五声调式,256.666009,,,,,source_pending
+cnpm-206,206,青城山下白素贞（笛子版）,笛子绿洲,Gong,C,C,Pentatonic,C宫五声,134.071361,,,,,source_pending
+cnpm-207,207,沧海一声笑,张晓红,Gong,A,A,Pentatonic,A宫五声调式,229.373243,NetEase Cloud Music,https://music.163.com/#/song?id=340868,古筝笛-泛爱众,03:49,title_artist_matched_version_not_verified
+cnpm-208,208,美丽草原我的家,朝克吉勒图,Gong,C,C,Pentatonic,C宫五声,256.05288,,,,,source_pending
+cnpm-210,210,粤海欢歌,纯音乐,Zhi,G,D,Heptatonic_Qingyue,D徵七声清乐,246.200952,,,,,source_pending
+cnpm-212,212,听松,周维,Zhi,#G/bA,#D/bE,Heptatonic_Qingyue,bE徵七声清乐,228.437302,,,,,source_pending
+cnpm-213,213,西厢词,饶宁新,Zhi,D,A,Hexatonic_Biangong,A徵六声+变宫,182.413741,,,,,source_pending
+cnpm-214,214,草原上升起不落的太阳,吴雁泽,Yu,#A/bB,G,Pentatonic,G羽五声调式,215.186576,,,,,source_pending
+cnpm-215,215,花非花,吴晓燕,Gong,E,E,Pentatonic,E宫五声调式,117.577143,,,,,source_pending
+cnpm-216,216,江南好,林淑娟,Zhi,A,E,Pentatonic,E徵五声调式,180.413333,,,,,source_pending
+cnpm-217,217,天边 (Live),云飞,Gong,#A/bB,#A/bB,Pentatonic,bB宫五声调式,174.2,,,,,source_pending
+cnpm-218,218,孟姜女(古筝独奏),项斯华,Zhi,D,A,Pentatonic,A徵五声,189.293333,,,,,source_pending
+cnpm-219,219,梧桐月,张维良,Yu,C,A,Heptatonic_Yayue,A羽七声雅乐,279.480363,,,,,source_pending
+cnpm-220,220,春到湘江,唐俊乔,Yu,A,#F/bG,Pentatonic,升F羽五声调式,350.385125,,,,,source_pending
+cnpm-223,223,赶马调,任桂珍,Yu,#A/bB,G,Pentatonic,G羽五声调式,144.314535,,,,,source_pending
+cnpm-224,224,水西谣,奥杰阿格,Gong,#F/bG,#F/bG,Pentatonic,#F宫五声调式,279.533333,,,,,source_pending
+cnpm-225,225,在那遥远的地方 Some where far away,华语群星,Yu,A,#F/bG,Heptatonic_Yayue,升F羽七声雅乐,134.791837,,,,,source_pending
+cnpm-226,226,傍妆台,张维良,Yu,D,B,Hexatonic_Qingjue,B羽六声+清角,265.187868,,,,,source_pending
+cnpm-228,228,云水禅心(古筝版),华语群星,Yu,C,A,Heptatonic_Qingyue,A羽清乐七声,461.153719,,,,,source_pending
+cnpm-231,231,长相思,朱昌耀,Yu,#A/bB,G,Heptatonic_Qingyue,G羽七声清乐,324.245964,,,,,source_pending
+cnpm-232,232,湘妃怨,龚一,Gong,C,C,Hexatonic_Qingjue,C宫六声加清角,271.099841,,,,,source_pending
+cnpm-234,234,女儿情,付娜,Gong,D,D,Heptatonic_Qingyue,D宫七声清乐,164.866667,,,,,source_pending
+cnpm-235,235,仙翁操,龚一,Gong,C,C,Hexatonic_Qingjue,C宫六声加清角,57.130862,NetEase Cloud Music,https://music.163.com/#/song?id=34033640,古琴演奏法,00:57,title_artist_matched_version_not_verified
+cnpm-236,236,泣颜回,山阳琴人,Gong,#A/bB,#A/bB,Pentatonic,bB宫五声,299.328005,,,,,source_pending
+cnpm-237,237,长相思(古琴),张艺平古琴,Yu,F,D,Pentatonic,D羽五声调式,75.086395,,,,,source_pending
+cnpm-238,238,草原恋,吕继宏,Yu,A,#F/bG,Pentatonic,#F羽五声调式,304.352653,,,,,source_pending
+cnpm-239,239,玉楼春晓,龚一,Zhi,#A/bB,F,Hexatonic_Biangong,F徵加变宫六声,175.308821,NetEase Cloud Music,https://music.163.com/#/song?id=34033646,古琴演奏法,02:55,title_artist_matched_version_not_verified
+cnpm-241,241,十五的月亮,董文华,Zhi,F,C,Heptatonic_Qingyue,C徵七声清乐,163.493333,,,,,source_pending
+cnpm-242,242,忆江南(古筝版),梦词,Yu,G,E,Hexatonic_Biangong,E羽六声（加变宫）,301.219025,,,,,source_pending
+cnpm-243,243,雨碎江南(古筝版),玉面小嫣然,Yu,G,E,Heptatonic_Qingyue,E羽清乐七声,245.48678,,,,,source_pending
+cnpm-244,244,光明行,刘天华,Gong,D,D,Hexatonic_Biangong,D宫六声调式?变宫,200.621474,,,,,source_pending
+cnpm-245,245,翠语-刘乐(节目),华语群星,Zhi,D,A,Hexatonic_Qingjue,A徵清角六声调式,414.216984,,,,,source_pending
+cnpm-246,246,远方的思念,纯音乐,Yu,C,A,Pentatonic,A羽五声,216.543107,,,,,source_pending
+cnpm-248,248,人面桃花,纯音乐,Gong,D,D,Heptatonic_Qingyue,D宫七声清乐,253.454127,,,,,source_pending
+cnpm-249,249,疏影,纯音乐,Gong,G,G,Heptatonic_Qingyue,G宫七声清乐,201.639184,,,,,source_pending
+cnpm-252,252,云裳诉,袁莎,Zhi,G,D,Heptatonic_Yanyue,D徵燕乐七声调式,714.358617,,,,,source_pending
+cnpm-253,253,桂枝香,朱润福,Yu,G,E,Pentatonic,E羽五声,139.716984,,,,,source_pending
+cnpm-254,254,沂蒙山小调,彭丽媛,Zhi,A,E,Pentatonic,E徵五声调式,152.212517,,,,,source_pending
+cnpm-255,255,林冲夜奔(2),郁红,Gong,C,C,Hexatonic_Biangong,C宫六声+变宫,180.0,,,,,source_pending
+cnpm-256,256,延边之歌 (古筝独奏),项斯华,Yu,G,E,Hexatonic_Qingjue,E羽六声+清角,124.666667,,,,,source_pending
+cnpm-257,257,虞美人,何莹,Gong,D,D,Pentatonic,D宫五声,147.039909,,,,,source_pending
+cnpm-258,258,各旦几嘛,纯音乐,Yu,D,B,Heptatonic_Yayue,B羽七声雅乐,307.710454,,,,,source_pending
+cnpm-260,260,战台风,付娜,Zhi,D,A,Pentatonic,A徵五声调式,309.512902,,,,,source_pending
+cnpm-261,261,蜻蜓点水,张强,Zhi,D,A,Pentatonic,A徵五声,103.307574,,,,,source_pending
+cnpm-263,263,达古拉,朝克吉勒图,Yu,F,D,Pentatonic,D羽五声,254.574966,,,,,source_pending
+cnpm-266,266,幸福渠 (古筝独奏),项斯华,Gong,D,D,Heptatonic_Qingyue,D宫七声清乐,311.266667,,,,,source_pending
+cnpm-267,267,迎宾客,林玲,Yu,D,B,Heptatonic_Qingyue,B羽七声清乐,240.293084,,,,,source_pending
+cnpm-268,268,茉莉花,林英苹,Zhi,D,A,Pentatonic,A徵五声调式,164.986803,,,,,source_pending
+cnpm-269,269,八月桂花遍地开,葛军,Gong,D,D,Pentatonic,D宫五声调式,132.036984,,,,,source_pending
+cnpm-271,271,寒江残雪,纯音乐,Gong,C,C,Heptatonic_Yayue,C宫七声雅乐,205.414943,,,,,source_pending
+cnpm-275,275,泣长城,黄金成,Zhi,C,G,Pentatonic,G徵五声,184.774172,,,,,source_pending
+cnpm-277,277,姑苏行,纯音乐,Gong,C,C,Heptatonic_Qingyue,C宫七声清乐,272.314535,,,,,source_pending
+cnpm-278,278,北京的金山上,群星,Yu,E,E,Pentatonic,E羽五声调式,164.624739,NetEase Cloud Music,https://music.163.com/#/song?id=5234215,红歌100首 献给党诞辰90周年,02:44,title_artist_matched_version_not_verified
+cnpm-279,279,醉渔唱晚,龚一,Zhi,C,G,Heptatonic_Qingyue,G徵清乐七声调式,282.854943,NetEase Cloud Music,https://music.163.com/#/song?id=88492,千古绝响.古琴,04:42,title_artist_matched_version_not_verified
+cnpm-281,281,妆台秋思 (古筝独奏),项斯华,Yu,F,D,Heptatonic_Yayue,D羽七声雅乐,228.333333,,,,,source_pending
+cnpm-282,282,西厢词,于秋旋,Zhi,G,D,Hexatonic_Qingjue,D徵六声+清角,111.960091,,,,,source_pending
+cnpm-286,286,琵琶吟,赵聪,Yu,C,A,Pentatonic,A羽 五声调式,250.973424,,,,,source_pending
