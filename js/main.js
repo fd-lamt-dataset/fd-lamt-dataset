@@ -50,7 +50,7 @@ function updateLanguageControls() {
     button.setAttribute('aria-label', language === 'en' ? '切换到中文' : 'Switch to English');
 }
 async function fetchText(path) {
-    const response = await fetch(`${path}?v=20261102migration`, { cache: 'no-store' });
+    const response = await fetch(`${path}?v=20261102cnpm`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}: ${path}`);
     return response.text();
 }
@@ -89,12 +89,13 @@ async function renderDatasetList(version, lang) {
 }
 async function renderDatasetDetail(version, lang, params) {
     const md = params.get('md') || 'GZVarMSA';
-    if (!['GZVarMSA', 'XFID', 'ac-ccm', 'LiveMusicDenoising'].includes(md)) throw new Error('Unknown dataset');
+    if (!['GZVarMSA', 'XFID', 'ac-ccm', 'LiveMusicDenoising', 'CNPM'].includes(md)) throw new Error('Unknown dataset');
     const [, text] = await Promise.all([ensureMarkedLoaded(), fetchText(`md/${md}${lang === 'en' ? '.en' : ''}.md`)]);
     if (version !== renderVersion) return;
     const firstLine = text.split('\n').find(line => line.startsWith('# '));
     document.getElementById('md-title').textContent = firstLine ? firstLine.slice(2).trim() : md;
     const root = document.getElementById('md-root');
+    root.dataset.dataset = md;
     root.innerHTML = window.marked.parse(text, { gfm: true, breaks: true });
     // The page header already displays the document title.
     if (root.firstElementChild?.tagName === 'H1') root.firstElementChild.remove();

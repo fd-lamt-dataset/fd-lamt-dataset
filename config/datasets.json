@@ -44,6 +44,17 @@
             "icon": "fa-solid fa-music",
             "descriptionEn": "A dataset for authentic live music denoising, containing 146 music source recordings and 1,078 clean music excerpts, approximately 626 minutes in total. It releases source URLs, excerpt timestamps, and benchmark noise generation metadata for Normal, Strong, and Extreme conditions.",
             "imageAltEn": "Live music denoising dataset"
+        },
+        {
+            "id": "cnpm",
+            "name": "CNPM",
+            "description": "CNPM 是中国民族五声调式数据集，包含 287 条录音，总时长约 858.63 分钟，覆盖宫、商、角、徵、羽五类调式，并提供同宫系统、主音、调式及音阶类型标注。",
+            "descriptionEn": "CNPM is a Chinese national pentatonic mode dataset with 287 recordings totaling approximately 858.63 minutes. It covers Gong, Shang, Jue, Zhi, and Yu, with annotations for the Tonggong system, tonic, mode pattern, and scale type.",
+            "imageAlt": "CNPM 数据集图标",
+            "imageAltEn": "CNPM dataset icon",
+            "mdFile": "CNPM",
+            "featured": false,
+            "icon": "fa-solid fa-music"
         }
     ]
 }

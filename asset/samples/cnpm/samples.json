@@ -1,0 +1,55 @@
+{
+  "source": "https://huggingface.co/datasets/ccmusic-database/CNPM",
+  "subset": "default",
+  "split": "train",
+  "dataset_fingerprint": "c17a48bfe9557978",
+  "selection": "Minimum decoded frame count / sample rate in each pattern; ties use earliest dataset row. Original embedded audio bytes, unmodified.",
+  "total_recordings": 287,
+  "class_counts": {
+    "Gong": 82,
+    "Yu": 59,
+    "Jue": 49,
+    "Zhi": 52,
+    "Shang": 45
+  },
+  "samples": [
+    {
+      "row_index": 6,
+      "shard": "data-00000-of-00007.arrow",
+      "row_in_batch": 6,
+      "source_filename": "商7.wav",
+      "pattern_id": 1,
+      "pattern": "Shang",
+      "system": "G",
+      "tonic": "A",
+      "type": "Heptatonic_Qingyue",
+      "mode": "A商七声清乐",
+      "duration_seconds": 15.436979166666667,
+      "frames": 740975,
+      "sample_rate": 48000,
+      "channels": 1,
+      "format": "WAV",
+      "file": "shang_shortest.wav",
+      "sha256": "6b77cab388510c2ac9956ff2b5dcf2e5a27ee9abfea7452c9799573ed721c09e"
+    },
+    {
+      "row_index": 280,
+      "shard": "data-00006-of-00007.arrow",
+      "row_in_batch": 34,
+      "source_filename": "角21.wav",
+      "pattern_id": 2,
+      "pattern": "Jue",
+      "system": "F",
+      "tonic": "A",
+      "type": "Hexatonic_Biangong",
+      "mode": "A角六声加变宫",
+      "duration_seconds": 15.413333333333334,
+      "frames": 739840,
+      "sample_rate": 48000,
+      "channels": 1,
+      "format": "WAV",
+      "file": "jue_shortest.wav",
+      "sha256": "0ab4ce420ad81e7bf22f856ef6f654d781deb426952f41ac9709caa221bec030"
+    }
+  ]
+}
