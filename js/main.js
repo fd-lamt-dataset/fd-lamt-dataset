@@ -184,7 +184,7 @@ async function renderFromHash() {
             const link = main.querySelector('.hero-mirror-link');
             const domestic = ['118.25.191.236', '124.222.254.199'].includes(window.location.hostname);
             const label = domestic ? (lang === 'zh' ? 'GitHub Pages 访问入口' : 'GitHub Pages mirror') : (lang === 'zh' ? '国内访问入口' : 'China mirror');
-            link.href = `${domestic ? 'https://fd-lamt-dataset.github.io/fd-lamt-dataset/' : 'http://124.222.254.199/'}#home?lang=${lang}`;
+            link.href = `${domestic ? 'https://fd-lamt-dataset.github.io/fd-lamt-dataset/' : 'https://124.222.254.199/'}#home?lang=${lang}`;
             link.innerHTML = `<i class="fa-solid fa-globe me-2" aria-hidden="true"></i>${label}`;
         }
         if (hash === '#dataset') await renderDatasetList(version, lang);
