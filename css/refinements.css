@@ -159,7 +159,7 @@ a:focus-visible, button:focus-visible, .table-scroll:focus-visible {
     .sidebar .nav-item { min-width: 0; }
     .sidebar a.nav-link { display: flex; align-items: center; justify-content: center; height: 52px; padding: 0.35rem !important; text-align: center; line-height: 1.3; font-size: 0.82rem; border-radius: 8px; }
     .home-hero { min-height: calc(100svh - 124px); padding: 1.25rem 1.25rem 2.5rem; flex-direction: column; gap: 1.5rem; }
-    .hero-mirror-link { position: static; align-self: flex-end; min-height: 44px; flex-shrink: 0; }
+    .hero-mirror-link { position: static; align-self: center; min-height: 44px; flex-shrink: 0; background: rgba(32, 36, 47, 0.25); border-color: rgba(255, 255, 255, 0.25); box-shadow: none; font-weight: 500; }
     .home-hero .text-center { padding: 0; width: 100%; max-width: 640px; }
     .home-hero h1 { font-size: clamp(1.75rem, 6.8vw, 2.75rem); overflow-wrap: anywhere; }
     .home-hero .lead { font-size: 1.05rem; line-height: 1.65; }

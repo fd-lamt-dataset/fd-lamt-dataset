@@ -50,7 +50,7 @@ function updateLanguageControls() {
     button.setAttribute('aria-label', language === 'en' ? '切换到中文' : 'Switch to English');
 }
 async function fetchText(path) {
-    const response = await fetch(`${path}?v=20261102contacts`, { cache: 'no-store' });
+    const response = await fetch(`${path}?v=20261102mobilemirror`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}: ${path}`);
     return response.text();
 }
