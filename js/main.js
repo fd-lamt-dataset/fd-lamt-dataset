@@ -33,7 +33,15 @@ function getLanguage() {
     try { return localStorage.getItem('fdlamt-language') === 'en' ? 'en' : 'zh'; }
     catch (_) { return language; }
 }
+function setNavigationOpen(open) {
+    const toggle = document.getElementById('navigation-toggle');
+    toggle.setAttribute('aria-expanded', String(open));
+    document.getElementById('site-navigation').inert = !open && window.matchMedia('(max-width: 1023px)').matches;
+    toggle.setAttribute('aria-label', language === 'zh' ? (open ? '收起导航' : '展开导航') : (open ? 'Close navigation' : 'Open navigation'));
+    document.querySelector('.sidebar').classList.toggle('navigation-open', open);
+}
 function updateLanguageControls() {
+    setNavigationOpen(false);
     document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
     document.querySelectorAll('.nav-link').forEach((a, i) => { a.textContent = messages[language].nav[i]; });
     document.querySelector('.sidebar-logo img').alt = language === 'en' ? 'Laboratory logo' : '实验室 Logo';
@@ -42,7 +50,7 @@ function updateLanguageControls() {
     button.setAttribute('aria-label', language === 'en' ? '切换到中文' : 'Switch to English');
 }
 async function fetchText(path) {
-    const response = await fetch(`${path}?v=20261013layout`, { cache: 'no-store' });
+    const response = await fetch(`${path}?v=20261102migration`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}: ${path}`);
     return response.text();
 }
@@ -98,6 +106,32 @@ async function renderDatasetDetail(version, lang, params) {
         wrapper.setAttribute('aria-label', lang === 'zh' ? `表格 ${index + 1}，可横向滚动` : `Table ${index + 1}, scroll horizontally`);
         table.before(wrapper);
         wrapper.appendChild(table);
+        if (table.querySelector('audio')) {
+            wrapper.classList.add('audio-samples');
+            wrapper.setAttribute('aria-label', lang === 'zh' ? '音频样例' : 'Audio samples');
+            const headings = Array.from(table.querySelectorAll('thead th'), th => th.textContent.trim());
+            const carried = [];
+            table.querySelectorAll('tbody tr').forEach(row => {
+                const cells = Array.from(row.cells);
+                let sourceIndex = 0;
+                headings.forEach((label, column) => {
+                    let cell;
+                    if (carried[column]?.remaining > 0) {
+                        cell = document.createElement('td');
+                        cell.className = 'mobile-span-cell';
+                        cell.textContent = carried[column].text;
+                        row.insertBefore(cell, cells[sourceIndex] || null);
+                        carried[column].remaining--;
+                    } else {
+                        cell = cells[sourceIndex++];
+                        if (!cell) return;
+                        if (cell.rowSpan > 1) carried[column] = { remaining: cell.rowSpan - 1, text: cell.textContent.trim() };
+                    }
+                    cell.dataset.label = label;
+                });
+            });
+        }
+
     });
 }
 async function renderAboutPage(version, lang) {
@@ -148,9 +182,9 @@ async function renderFromHash() {
         main.innerHTML = html;
         if (hash === '#home' || !routes[hash]) {
             const link = main.querySelector('.hero-mirror-link');
-            const domestic = window.location.hostname === '118.25.191.236';
+            const domestic = ['118.25.191.236', '124.222.254.199'].includes(window.location.hostname);
             const label = domestic ? (lang === 'zh' ? 'GitHub Pages 访问入口' : 'GitHub Pages mirror') : (lang === 'zh' ? '国内访问入口' : 'China mirror');
-            link.href = `${domestic ? 'https://fd-lamt-dataset.github.io/fd-lamt-dataset/' : 'http://118.25.191.236:8000/'}#home?lang=${lang}`;
+            link.href = `${domestic ? 'https://fd-lamt-dataset.github.io/fd-lamt-dataset/' : 'http://124.222.254.199/'}#home?lang=${lang}`;
             link.innerHTML = `<i class="fa-solid fa-globe me-2" aria-hidden="true"></i>${label}`;
         }
         if (hash === '#dataset') await renderDatasetList(version, lang);
@@ -169,6 +203,18 @@ document.addEventListener('DOMContentLoaded', () => {
         params.set('lang', language === 'en' ? 'zh' : 'en');
         window.location.hash = `${hash}?${params}`;
     });
+    const navToggle = document.getElementById('navigation-toggle');
+    navToggle.addEventListener('click', () => setNavigationOpen(navToggle.getAttribute('aria-expanded') !== 'true'));
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+            setNavigationOpen(false);
+            navToggle.focus();
+        }
+    });
+    document.addEventListener('click', event => {
+        if (!event.target.closest('.sidebar')) setNavigationOpen(false);
+    });
+    window.matchMedia('(max-width: 1023px)').addEventListener('change', () => setNavigationOpen(false));
     renderFromHash();
     window.addEventListener('hashchange', renderFromHash);
 });

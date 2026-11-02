@@ -8,7 +8,7 @@
     <link href="vendor/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css?v=20261012download">
     <link rel="stylesheet" href="vendor/animate.min.css" />
-    <link rel="stylesheet" href="css/refinements.css?v=20261013layout">
+    <link rel="stylesheet" href="css/refinements.css?v=20261102migration">
     <link rel="stylesheet" href="vendor/all.min.css?v=20261012fonts">
 </head>
 
@@ -22,7 +22,10 @@
             <div class="sidebar-logo mb-4"> <!-- mb-4 用来在下面空出间距 -->
                 <img src="asset/FD-LAMT_LOGO.svg" alt="实验室 Logo" class="img-fluid">
             </div>
-            <ul class="nav nav-pills flex-column mb-auto">
+            <button type="button" id="navigation-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="展开导航">
+                <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+            </button>
+            <ul id="site-navigation" class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item"><a href="#home" class="nav-link">首页</a></li>
                 <li class="nav-item"><a href="#dataset" class="nav-link">数据集</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">关于 FD-LAMT</a></li>
@@ -38,7 +41,7 @@
     </div>
 
     <script src="vendor/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js?v=20261013layout"></script>
+    <script src="js/main.js?v=20261102migration"></script>
 </body>
 
 </html>
