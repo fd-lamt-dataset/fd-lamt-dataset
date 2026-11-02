@@ -55,6 +55,17 @@
             "mdFile": "CNPM",
             "featured": false,
             "icon": "fa-solid fa-music"
+        },
+        {
+            "id": "guzhengtech99",
+            "name": "GuzhengTech99",
+            "description": "GuzhengTech99 面向帧级古筝演奏技法检测，包含 99 首录音室独奏录音，约 151 分钟，覆盖 7 类技法，并提供音符级起止时间、音高与技法标注。",
+            "descriptionEn": "GuzhengTech99 supports frame-level guzheng playing technique detection with 99 studio-recorded solos, approximately 151 minutes, seven techniques, and note-level onset, offset, pitch, and technique annotations.",
+            "imageAlt": "GuzhengTech99 数据集图标",
+            "imageAltEn": "GuzhengTech99 dataset icon",
+            "mdFile": "GuzhengTech99",
+            "featured": false,
+            "icon": "fa-solid fa-music"
         }
     ]
 }

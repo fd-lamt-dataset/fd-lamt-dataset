@@ -70,8 +70,6 @@ Labels cover the Tonggong system, tonic, mode pattern, scale type, and Chinese m
 
 ## Dataset Examples / Demo
 
-Shang and Jue feature the shortest complete recording in each class. Gong, Yu, and Zhi each feature one track with metadata and a public platform page, without original audio or direct audio-stream links. Durations refer to dataset recordings; excerpt timestamps are omitted for now.
-
 | Mode pattern | Track / Source file | Tonggong system | Tonic | Mode annotation | Duration | Listen / Source |
 | --- | --- | --- | --- | --- | --- | --- |
 | Gong | 仙翁操 / 龚一 | C | C | C Gong, hexatonic (Qingjue) | 57.131 s | [NetEase Cloud Music](https://music.163.com/#/song?id=34033640) |
